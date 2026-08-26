@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>bc0e0d535b52463294ed94967fed1303</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_bc0e0d535b52463294ed94967fed1303</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_adj_req</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Adjustment Request Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function adjustmentRequestLifecycle() {
+    // Protect Posted state immutability
+    var currentStatus = current.getValue('status');
+    if (previous.getValue('status') === 'posted') {
+        gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: REJECTED — attempt to modify Posted adjustment ' + current.getValue('adjustment_number'));
+        gs.addErrorMessage('Adjustment Request: Posted records cannot be modified.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Only process status changes for lifecycle logic
+    if (!current.status.changes()) {
+        // Protect direction/quantity on approved+ records
+        var prevStatus = previous.getValue('status');
+        if (prevStatus === 'approved' || prevStatus === 'posting' || prevStatus === 'posted') {
+            if (current.requested_direction.changes() || current.requested_quantity.changes()) {
+                gs.warn('[Retail Store Assistant] Adjustment Request Lifecycle: REJECTED — attempt to change direction/quantity on ' + prevStatus + ' adjustment ' + current.getValue('adjustment_number'));
+                gs.addErrorMessage('Adjustment Request: direction and quantity cannot be changed after approval.');
+                current.setAbortAction(true);
+                return;
+            }
+        }
+        gs.debug('[Retail Store Assistant] Adjustment Request Lifecycle: non-status update for ' + current.getValue('adjustment_number'));
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var adjNumber = current.getValue('adjustment_number');
+
+    gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for adjustment ' + adjNumber);
+
+    // Define valid transitions (V2.8)
+    var validTransitions = {
+        'requested': ['pending_approval'],
+        'pending_approval': ['approved', 'rejected'],
+        'approved': ['posting'],
+        'posting': ['posted', 'failed'],
+        'posted': [],
+        'rejected': [],
+        'failed': ['posting']
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: REJECTED invalid transition "' + oldStatus + '" → "' + newStatus + '" for adjustment ' + adjNumber);
+        gs.addErrorMessage('Adjustment Request lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+
+    // Handle transition to Approved: validate self-approval prevention
+    if (newStatus === 'approved') {
+        var requestedBy = current.getValue('requested_by');
+        var approver = current.getValue('approver');
+
+        if (!approver) {
+            gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: cannot approve — approver is not set for adjustment ' + adjNumber);
+            gs.addErrorMessage('Adjustment Request cannot be approved: approver must be specified.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Self-approval prevention
+        if (requestedBy === approver) {
+            gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: REJECTED self-approval — requested_by=' + requestedBy + ' equals approver=' + approver + ' for adjustment ' + adjNumber);
+            gs.addErrorMessage('Adjustment Request cannot be approved: the requester cannot approve their own request.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        current.setValue('approved_on', now.getDisplayValue());
+        current.setValue('approval_outcome', 'approved');
+
+        gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' approved by ' + approver);
+    }
+
+    // Handle transition to Rejected
+    if (newStatus === 'rejected') {
+        current.setValue('approval_outcome', 'rejected');
+        gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' rejected');
+    }
+
+    // Handle transition to Posting: attempt to create Inventory Transaction
+    if (newStatus === 'posting') {
+        current.setValue('posting_started_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' entering Posting state');
+    }
+
+    // Handle transition to Posted: create the Inventory Transaction
+    if (newStatus === 'posted') {
+        var store = current.getValue('store');
+        var sku = current.getValue('sku');
+        var direction = current.getValue('requested_direction');
+        var quantity = parseInt(current.getValue('requested_quantity'), 10);
+        var idempotencyKey = current.getValue('idempotency_key');
+
+        gs.debug('[Retail Store Assistant] Adjustment Request Lifecycle: posting adjustment ' + adjNumber + ' — direction=' + direction + ' qty=' + quantity + ' store=' + store + ' sku=' + sku);
+
+        // Determine movement direction from requested_direction
+        var movementDirection = (direction === 'increase') ? 'in' : 'out';
+
+        // Check for existing transaction with same idempotency key (prevent duplicate posting)
+        var existingTxn = new GlideRecord('x_1945330_retail_0_inv_txn');
+        existingTxn.addQuery('idempotency_key', 'ADJ-' + idempotencyKey);
+        existingTxn.setLimit(1);
+        existingTxn.query();
+        if (existingTxn.next()) {
+            // Idempotent — already posted, just reference it
+            gs.warn('[Retail Store Assistant] Adjustment Request Lifecycle: idempotent — transaction already exists for ADJ-' + idempotencyKey);
+            current.setValue('resulting_transaction', existingTxn.getUniqueValue());
+            current.setValue('posted_on', now.getDisplayValue());
+            gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' Posted (idempotent, existing txn=' + existingTxn.getUniqueValue() + ')');
+            return;
+        }
+
+        // Create the Inventory Transaction
+        var txn = new GlideRecord('x_1945330_retail_0_inv_txn');
+        txn.initialize();
+        txn.setValue('transaction_number', 'TXN-ADJ-' + adjNumber);
+        txn.setValue('transaction_type', 'adjustment');
+        txn.setValue('sku', sku);
+        txn.setValue('store', store);
+        txn.setValue('movement_direction', movementDirection);
+        txn.setValue('quantity', quantity.toString());
+        txn.setValue('transaction_date', now.getDisplayValue());
+        txn.setValue('adjustment_request', current.getUniqueValue());
+        txn.setValue('idempotency_key', 'ADJ-' + idempotencyKey);
+        txn.setValue('posting_reference', 'Adjustment Request ' + adjNumber + ' (' + direction + ' ' + quantity + ')');
+        txn.setValue('posted_on', now.getDisplayValue());
+        txn.setValue('posted_by', gs.getUserID());
+
+        var txnId = txn.insert();
+
+        if (!txnId) {
+            // Posting failed — transition to Failed instead
+            gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: FAILED to create Inventory Transaction for adjustment ' + adjNumber);
+            current.setValue('status', 'failed');
+            current.setValue('failure_reason', 'Failed to create Inventory Transaction. The transaction insert was rejected by the system (possible negative on-hand violation or validation error).');
+            gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' moved to Failed');
+            return;
+        }
+
+        // Success
+        current.setValue('resulting_transaction', txnId);
+        current.setValue('posted_on', now.getDisplayValue());
+
+        gs.info('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' Posted successfully — resulting_transaction=' + txnId + ' direction=' + movementDirection + ' qty=' + quantity);
+    }
+
+    // Handle transition to Failed
+    if (newStatus === 'failed') {
+        if (!current.getValue('failure_reason')) {
+            current.setValue('failure_reason', 'Posting failed — see system logs for details.');
+        }
+        gs.error('[Retail Store Assistant] Adjustment Request Lifecycle: adjustment ' + adjNumber + ' FAILED — reason: ' + current.getValue('failure_reason'));
+    }
+})();
+]]></script>
+    <sys_name>Adjustment Request Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

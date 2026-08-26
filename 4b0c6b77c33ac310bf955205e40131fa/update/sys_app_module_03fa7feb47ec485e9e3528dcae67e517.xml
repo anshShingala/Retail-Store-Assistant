@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>03fa7feb47ec485e9e3528dcae67e517</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_app_module_03fa7feb47ec485e9e3528dcae67e517</sys_update_name>
+    <active>true</active>
+    <application>5975a1097fcb4d49818d487eee791737</application>
+    <hint>View and manage inventory adjustment requests</hint>
+    <link_type>LIST</link_type>
+    <name>x_1945330_retail_0_adj_req</name>
+    <order>1200</order>
+    <title>Adjustment Requests</title>
+  </sys_app_module>
+</record_update>

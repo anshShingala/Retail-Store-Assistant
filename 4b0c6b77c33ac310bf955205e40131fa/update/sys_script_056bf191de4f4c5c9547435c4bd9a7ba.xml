@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>056bf191de4f4c5c9547435c4bd9a7ba</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_056bf191de4f4c5c9547435c4bd9a7ba</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>false</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_adj_req</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Validate Adjustment Request</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function validateAdjustmentRequest() {
+    gs.debug('[Retail Store Assistant] Validate Adjustment Request: processing new insert');
+
+    var adjNumber = current.getValue('adjustment_number');
+
+    // Validate requested_quantity is a positive integer
+    var qtyStr = current.getValue('requested_quantity');
+    var qty = parseInt(qtyStr, 10);
+    if (isNaN(qty) || qty <= 0) {
+        gs.error('[Retail Store Assistant] Validate Adjustment Request: rejected — requested_quantity must be positive, got: ' + qtyStr);
+        gs.addErrorMessage('Adjustment Request rejected: requested quantity must be a positive integer greater than zero.');
+        current.setAbortAction(true);
+        return;
+    }
+    current.setValue('requested_quantity', qty.toString());
+    gs.debug('[Retail Store Assistant] Validate Adjustment Request: quantity validated — ' + qty);
+
+    // Validate requested_direction
+    var direction = current.getValue('requested_direction');
+    if (direction !== 'increase' && direction !== 'decrease') {
+        gs.error('[Retail Store Assistant] Validate Adjustment Request: rejected — requested_direction must be increase or decrease, got: ' + direction);
+        gs.addErrorMessage('Adjustment Request rejected: requested direction must be Increase or Decrease.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate Adjustment Request: direction validated — ' + direction);
+
+    // Validate idempotency_key uniqueness
+    var idempotencyKey = current.getValue('idempotency_key');
+    if (!idempotencyKey) {
+        gs.error('[Retail Store Assistant] Validate Adjustment Request: rejected — idempotency_key is missing');
+        gs.addErrorMessage('Adjustment Request rejected: idempotency_key is required.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var existing = new GlideRecord('x_1945330_retail_0_adj_req');
+    existing.addQuery('idempotency_key', idempotencyKey);
+    existing.setLimit(1);
+    existing.query();
+    if (existing.hasNext()) {
+        gs.warn('[Retail Store Assistant] Validate Adjustment Request: duplicate — idempotency_key "' + idempotencyKey + '" already exists');
+        gs.addErrorMessage('Adjustment Request rejected: idempotency_key "' + idempotencyKey + '" already exists. Duplicate adjustment requests are not allowed.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate Adjustment Request: idempotency_key "' + idempotencyKey + '" is unique');
+
+    // Set default status
+    if (!current.getValue('status')) {
+        current.setValue('status', 'requested');
+    }
+
+    gs.info('[Retail Store Assistant] Validate Adjustment Request: validation passed — adjustment_number=' + adjNumber + ' store=' + current.getValue('store') + ' sku=' + current.getValue('sku') + ' direction=' + direction + ' qty=' + qty);
+})();
+]]></script>
+    <sys_name>Validate Adjustment Request</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>
