@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>0d10f1717a9e4f8a853ed37d58c3a0f2</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_0d10f1717a9e4f8a853ed37d58c3a0f2</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_phys_count</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Physical Count Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function physicalCountLifecycle() {
+    // Only process status changes
+    if (!current.status.changes()) {
+        // Validate counted_quantity if being updated (must not be negative)
+        if (current.counted_quantity.changes()) {
+            var countedQtyStr = current.getValue('counted_quantity');
+            if (countedQtyStr !== null && countedQtyStr !== '') {
+                var countedQty = parseInt(countedQtyStr, 10);
+                if (isNaN(countedQty) || countedQty < 0) {
+                    gs.error('[Retail Store Assistant] Physical Count Lifecycle: rejected — counted_quantity must be non-negative, got: ' + countedQtyStr + ' for count ' + current.getValue('count_number'));
+                    gs.addErrorMessage('Physical Count: counted quantity must be a non-negative integer.');
+                    current.setAbortAction(true);
+                    return;
+                }
+            }
+        }
+        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: no status change for count ' + current.getValue('count_number') + ', skipping lifecycle logic');
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var countNumber = current.getValue('count_number');
+
+    gs.info('[Retail Store Assistant] Physical Count Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for count ' + countNumber);
+
+    // Define valid transitions
+    var validTransitions = {
+        'open': ['in_progress', 'cancelled'],
+        'in_progress': ['completed', 'cancelled'],
+        'completed': [],
+        'cancelled': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] Physical Count Lifecycle: invalid transition "' + oldStatus + '" → "' + newStatus + '" for count ' + countNumber);
+        gs.addErrorMessage('Physical Count lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+
+    // Handle transition to In Progress: capture expected_quantity snapshot
+    if (newStatus === 'in_progress') {
+        var store = current.getValue('store');
+        var sku = current.getValue('sku');
+
+        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: capturing expected_quantity snapshot for count ' + countNumber + ' store=' + store + ' sku=' + sku);
+
+        // Snapshot expected_quantity from Inventory Position.on_hand
+        var position = new GlideRecord('x_1945330_retail_0_inv_pos');
+        position.addQuery('store', store);
+        position.addQuery('sku', sku);
+        position.setLimit(1);
+        position.query();
+
+        var expectedQty = 0;
+        if (position.next()) {
+            expectedQty = parseInt(position.getValue('on_hand'), 10) || 0;
+            gs.debug('[Retail Store Assistant] Physical Count Lifecycle: found inventory position — on_hand=' + expectedQty);
+        } else {
+            gs.warn('[Retail Store Assistant] Physical Count Lifecycle: no inventory position found for store=' + store + ' sku=' + sku + ' — defaulting expected_quantity to 0');
+        }
+
+        current.setValue('expected_quantity', expectedQty.toString());
+        current.setValue('counted_on', now.getDisplayValue());
+
+        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' moved to In Progress — expected_quantity=' + expectedQty + ' counted_on=' + now.getDisplayValue());
+    }
+
+    // Handle transition to Completed: calculate variance, finalize
+    if (newStatus === 'completed') {
+        // Validate counted_quantity is provided
+        var countedQtyStr = current.getValue('counted_quantity');
+        if (countedQtyStr === null || countedQtyStr === '') {
+            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot complete count ' + countNumber + ' — counted_quantity is required');
+            gs.addErrorMessage('Physical Count cannot be completed: counted quantity must be entered before finalizing.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        var countedQty = parseInt(countedQtyStr, 10);
+        if (isNaN(countedQty) || countedQty < 0) {
+            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot complete count ' + countNumber + ' — counted_quantity must be non-negative, got: ' + countedQtyStr);
+            gs.addErrorMessage('Physical Count cannot be completed: counted quantity must be a non-negative integer.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Calculate variance = counted_quantity - expected_quantity
+        var expectedQty = parseInt(current.getValue('expected_quantity'), 10) || 0;
+        var variance = countedQty - expectedQty;
+
+        current.setValue('variance', variance.toString());
+        current.setValue('completed_on', now.getDisplayValue());
+
+        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' completed — counted_quantity=' + countedQty + ' expected_quantity=' + expectedQty + ' variance=' + variance);
+
+        // CRITICAL: Do NOT modify Inventory Position
+        // CRITICAL: Do NOT create an Inventory Transaction
+        // The discrepancy path handles inventory corrections
+        if (variance !== 0) {
+            gs.info('[Retail Store Assistant] Physical Count Lifecycle: non-zero variance (' + variance + ') detected for count ' + countNumber + ' — discrepancy evaluation required');
+        }
+    }
+
+    // Handle cancellation
+    if (newStatus === 'cancelled') {
+        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' cancelled from status "' + oldStatus + '"');
+    }
+})();
+]]></script>
+    <sys_name>Physical Count Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>
