@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl_role">
+  <sys_security_acl_role action="INSERT_OR_UPDATE">
+    <sys_id>4a36aa11d39044e1844603a34ea99664</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_security_acl_role_4a36aa11d39044e1844603a34ea99664</sys_update_name>
+    <sys_security_acl>5a366187df8d404ea144d56c396ca9a9</sys_security_acl>
+    <sys_user_role name="x_1945330_retail_0.retail_store_manager">f935624749294ac9bff9e7cb23b70c33</sys_user_role>
+  </sys_security_acl_role>
+</record_update>

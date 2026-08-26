@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
+  <sys_user_role_contains action="INSERT_OR_UPDATE">
+    <sys_id>4b17bcd4be5e440f812be25924083a7c</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_user_role_contains_4b17bcd4be5e440f812be25924083a7c</sys_update_name>
+    <contains name="x_1945330_retail_0.retail_store_manager">f935624749294ac9bff9e7cb23b70c33</contains>
+    <role name="x_1945330_retail_0.retail_investigator">951765dc53e54236897bb1378c070472</role>
+  </sys_user_role_contains>
+</record_update>

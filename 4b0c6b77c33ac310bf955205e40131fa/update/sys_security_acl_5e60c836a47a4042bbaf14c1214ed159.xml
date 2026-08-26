@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_security_acl">
+  <sys_security_acl action="INSERT_OR_UPDATE">
+    <sys_id>5e60c836a47a4042bbaf14c1214ed159</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_security_acl_5e60c836a47a4042bbaf14c1214ed159</sys_update_name>
+    <active>true</active>
+    <admin_overrides>true</admin_overrides>
+    <advanced>false</advanced>
+    <applies_to/>
+    <condition/>
+    <decision_type>allow</decision_type>
+    <description/>
+    <name>x_1945330_retail_0_inv_pos</name>
+    <operation display_value="read">read</operation>
+    <script/>
+    <security_attribute/>
+    <type>record</type>
+  </sys_security_acl>
+</record_update>
