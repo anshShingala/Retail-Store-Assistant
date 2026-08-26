@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>337bda1254ee4e918cc219a1ef4849fd</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_app_module_337bda1254ee4e918cc219a1ef4849fd</sys_update_name>
+    <active>true</active>
+    <application>5975a1097fcb4d49818d487eee791737</application>
+    <hint>View current inventory positions by store and SKU</hint>
+    <link_type>LIST</link_type>
+    <name>x_1945330_retail_0_inv_pos</name>
+    <order>500</order>
+    <title>Inventory Positions</title>
+  </sys_app_module>
+</record_update>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>e484b4cd3dfb401ea6c7a2b6fd67a2fa</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_e484b4cd3dfb401ea6c7a2b6fd67a2fa</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>false</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_inv_txn</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Prevent Negative On-Hand</name>
+    <order>300</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function checkNegativeOnhand() {
+    var direction = current.getValue('movement_direction');
+
+    // Only check outbound movements
+    if (direction !== 'out') {
+        return;
+    }
+
+    var store = current.getValue('store');
+    var sku = current.getValue('sku');
+    var quantity = parseInt(current.getValue('quantity'), 10);
+
+    // Find the Inventory Position for this Store + SKU
+    var position = new GlideRecord('x_1945330_retail_0_inv_pos');
+    position.addQuery('store', store);
+    position.addQuery('sku', sku);
+    position.setLimit(1);
+    position.query();
+
+    var currentOnHand = 0;
+    if (position.next()) {
+        currentOnHand = parseInt(position.getValue('on_hand'), 10) || 0;
+    }
+
+    // Check if the outbound movement would make on_hand negative
+    if (currentOnHand - quantity < 0) {
+        gs.addErrorMessage(
+            'Inventory Transaction rejected: this outbound movement of ' + quantity +
+            ' would produce negative On-Hand (current On-Hand: ' + currentOnHand +
+            '). Invalid negative authoritative inventory is not allowed.'
+        );
+        current.setAbortAction(true);
+    }
+})();
+]]></script>
+    <sys_name>Prevent Negative On-Hand</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

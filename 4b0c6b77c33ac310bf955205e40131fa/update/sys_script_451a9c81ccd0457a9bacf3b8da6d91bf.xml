@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>451a9c81ccd0457a9bacf3b8da6d91bf</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_451a9c81ccd0457a9bacf3b8da6d91bf</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>false</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_inv_txn</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Validate Positive Quantity</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function validateQuantity() {
+    var quantity = parseInt(current.getValue('quantity'), 10);
+
+    if (isNaN(quantity) || quantity <= 0) {
+        gs.addErrorMessage('Inventory Transaction rejected: quantity must be a positive integer greater than zero.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Ensure stored value is the clean integer
+    current.setValue('quantity', quantity.toString());
+})();
+]]></script>
+    <sys_name>Validate Positive Quantity</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>
