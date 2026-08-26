@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>3e07e570c7554622baad27873116d7bf</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_3e07e570c7554622baad27873116d7bf</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_reservation</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Reservation Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function reservationLifecycle() {
+    // Only process status changes
+    if (!current.status.changes()) {
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+
+    // Define valid transitions
+    var validTransitions = {
+        'requested': ['confirmed'],
+        'confirmed': ['ready_for_pickup', 'cancelled', 'expired'],
+        'ready_for_pickup': ['picked_up', 'expired'],
+        'picked_up': [],
+        'cancelled': [],
+        'expired': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.addErrorMessage('Reservation lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+    var quantity = parseInt(current.getValue('quantity'), 10);
+    var store = current.getValue('holding_store');
+    var sku = current.getValue('sku');
+
+    // Handle confirmation: server-side availability revalidation with concurrency protection
+    if (newStatus === 'confirmed') {
+        // Lock and check the Inventory Position for this Store + SKU
+        var position = new GlideRecord('x_1945330_retail_0_inv_pos');
+        position.addQuery('store', store);
+        position.addQuery('sku', sku);
+        position.setLimit(1);
+        position.query();
+
+        if (!position.next()) {
+            gs.addErrorMessage('Reservation confirmation failed: no inventory position exists for this Store + SKU combination. Available quantity is 0.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Read current values (row is locked by the query within this transaction)
+        var onHand = parseInt(position.getValue('on_hand'), 10) || 0;
+        var reserved = parseInt(position.getValue('reserved'), 10) || 0;
+        var unavailable = parseInt(position.getValue('unavailable'), 10) || 0;
+        var currentAvailable = onHand - reserved - unavailable;
+
+        // Revalidate availability
+        if (quantity > currentAvailable) {
+            gs.addErrorMessage('Reservation confirmation failed: insufficient available inventory. Requested: ' + quantity + ', Available: ' + currentAvailable + '.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Update reserved quantity on the position (concurrency-safe via row lock)
+        var newReserved = reserved + quantity;
+        var newAvailable = onHand - newReserved - unavailable;
+        position.setValue('reserved', newReserved.toString());
+        position.setValue('available', newAvailable.toString());
+
+        // Check integrity
+        if (newAvailable < 0) {
+            position.setValue('integrity_status', 'reconciliation_required');
+        }
+
+        position.setValue('last_recalculated_on', now.getDisplayValue());
+        position.update();
+
+        // Record confirmed_on timestamp
+        current.setValue('confirmed_on', now.getDisplayValue());
+    }
+
+    // Handle Ready for Pickup
+    if (newStatus === 'ready_for_pickup') {
+        current.setValue('ready_on', now.getDisplayValue());
+    }
+
+    // Handle Pickup: release commitment
+    if (newStatus === 'picked_up') {
+        current.setValue('pickup_on', now.getDisplayValue());
+        releaseCommitment(store, sku, quantity, now);
+    }
+
+    // Handle Cancellation: release commitment
+    if (newStatus === 'cancelled') {
+        current.setValue('cancelled_on', now.getDisplayValue());
+        releaseCommitment(store, sku, quantity, now);
+    }
+
+    // Handle Expiry: release commitment
+    if (newStatus === 'expired') {
+        releaseCommitment(store, sku, quantity, now);
+    }
+
+    function releaseCommitment(storeId, skuId, qty, timestamp) {
+        var pos = new GlideRecord('x_1945330_retail_0_inv_pos');
+        pos.addQuery('store', storeId);
+        pos.addQuery('sku', skuId);
+        pos.setLimit(1);
+        pos.query();
+
+        if (pos.next()) {
+            var posReserved = parseInt(pos.getValue('reserved'), 10) || 0;
+            var posOnHand = parseInt(pos.getValue('on_hand'), 10) || 0;
+            var posUnavailable = parseInt(pos.getValue('unavailable'), 10) || 0;
+
+            var updatedReserved = posReserved - qty;
+            if (updatedReserved < 0) {
+                updatedReserved = 0;
+            }
+            var updatedAvailable = posOnHand - updatedReserved - posUnavailable;
+
+            pos.setValue('reserved', updatedReserved.toString());
+            pos.setValue('available', updatedAvailable.toString());
+
+            // Check integrity
+            if (updatedAvailable < 0) {
+                pos.setValue('integrity_status', 'reconciliation_required');
+            } else {
+                pos.setValue('integrity_status', 'normal');
+            }
+
+            pos.setValue('last_recalculated_on', timestamp.getDisplayValue());
+            pos.update();
+        }
+    }
+})();
+]]></script>
+    <sys_name>Reservation Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

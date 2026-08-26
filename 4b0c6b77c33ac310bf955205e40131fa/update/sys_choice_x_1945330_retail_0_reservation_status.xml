@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="status" table="x_1945330_retail_0_reservation" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>1b5a7e80a27e4646b1138716e94f01d2</sys_id>
+      <element>status</element>
+      <name>x_1945330_retail_0_reservation</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_package display_value="x_1945330_retail_0" source="4b0c6b77c33ac310bf955205e40131fa">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+      <sys_update_name>sys_choice_x_1945330_retail_0_reservation_status</sys_update_name>
+      <sys_name>status</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>9cf4170592f44d51a311900574bf8f8a</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Requested</label>
+      <value>requested</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c2e1f8e60fb4407690ee2f5c763c5a87</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Confirmed</label>
+      <value>confirmed</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>0b8f9e4e8aac4194b247689e9763a9bc</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Ready for Pickup</label>
+      <value>ready_for_pickup</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>e4de3414916f4563926237b572c04580</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Picked Up</label>
+      <value>picked_up</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>e9e195d1b754463f9ecc6bc282e545a0</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Cancelled</label>
+      <value>cancelled</value>
+      <sequence>5</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>ad61c17bb297418bb21a1e15a2864a31</sys_id>
+      <name>x_1945330_retail_0_reservation</name>
+      <element>status</element>
+      <label>Expired</label>
+      <value>expired</value>
+      <sequence>6</sequence>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>
