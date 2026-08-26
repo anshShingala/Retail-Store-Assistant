@@ -33,11 +33,15 @@
     <script><![CDATA[(function reservationLifecycle() {
     // Only process status changes
     if (!current.status.changes()) {
+        gs.debug('[Retail Store Assistant] Reservation Lifecycle: no status change detected, skipping');
         return;
     }
 
     var oldStatus = previous.getValue('status');
     var newStatus = current.getValue('status');
+    var reservationNumber = current.getValue('reservation_number');
+
+    gs.info('[Retail Store Assistant] Reservation Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for reservation ' + reservationNumber);
 
     // Define valid transitions
     var validTransitions = {
@@ -59,6 +63,7 @@
     }
 
     if (!isValid) {
+        gs.error('[Retail Store Assistant] Reservation Lifecycle: invalid transition "' + oldStatus + '" → "' + newStatus + '" for reservation ' + reservationNumber);
         gs.addErrorMessage('Reservation lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
         current.setAbortAction(true);
         return;
@@ -69,9 +74,30 @@
     var store = current.getValue('holding_store');
     var sku = current.getValue('sku');
 
-    // Handle confirmation: server-side availability revalidation with concurrency protection
+    // Handle confirmation: server-side availability revalidation with pessimistic locking
     if (newStatus === 'confirmed') {
-        // Lock and check the Inventory Position for this Store + SKU
+        gs.debug('[Retail Store Assistant] Reservation Lifecycle: confirming reservation ' + reservationNumber + ' — acquiring row lock on Inventory Position');
+
+        // STEP 1: Acquire exclusive row lock via trivial update
+        var lockGr = new GlideRecord('x_1945330_retail_0_inv_pos');
+        lockGr.addQuery('store', store);
+        lockGr.addQuery('sku', sku);
+        lockGr.setLimit(1);
+        lockGr.query();
+
+        if (!lockGr.next()) {
+            gs.error('[Retail Store Assistant] Reservation Lifecycle: no inventory position found for store=' + store + ' sku=' + sku + ' during confirmation of reservation ' + reservationNumber);
+            gs.addErrorMessage('Reservation confirmation failed: no inventory position exists for this Store + SKU combination. Available quantity is 0.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Trivial update to acquire the row lock — concurrent transactions will BLOCK here
+        lockGr.setValue('last_recalculated_on', now.getDisplayValue());
+        lockGr.update();
+        gs.debug('[Retail Store Assistant] Reservation Lifecycle: row lock acquired on Inventory Position for store=' + store + ' sku=' + sku);
+
+        // STEP 2: RE-READ the position in a fresh GlideRecord to get latest committed state
         var position = new GlideRecord('x_1945330_retail_0_inv_pos');
         position.addQuery('store', store);
         position.addQuery('sku', sku);
@@ -79,25 +105,28 @@
         position.query();
 
         if (!position.next()) {
+            gs.error('[Retail Store Assistant] Reservation Lifecycle: inventory position disappeared after lock acquisition for store=' + store + ' sku=' + sku);
             gs.addErrorMessage('Reservation confirmation failed: no inventory position exists for this Store + SKU combination. Available quantity is 0.');
             current.setAbortAction(true);
             return;
         }
 
-        // Read current values (row is locked by the query within this transaction)
+        // STEP 3: Check availability with the fresh data
         var onHand = parseInt(position.getValue('on_hand'), 10) || 0;
         var reserved = parseInt(position.getValue('reserved'), 10) || 0;
         var unavailable = parseInt(position.getValue('unavailable'), 10) || 0;
         var currentAvailable = onHand - reserved - unavailable;
 
-        // Revalidate availability
+        gs.debug('[Retail Store Assistant] Reservation Lifecycle: fresh position state — on_hand=' + onHand + ' reserved=' + reserved + ' unavailable=' + unavailable + ' available=' + currentAvailable + ' requested_qty=' + quantity);
+
         if (quantity > currentAvailable) {
+            gs.warn('[Retail Store Assistant] Reservation Lifecycle: insufficient inventory for reservation ' + reservationNumber + '. Requested: ' + quantity + ', Available: ' + currentAvailable);
             gs.addErrorMessage('Reservation confirmation failed: insufficient available inventory. Requested: ' + quantity + ', Available: ' + currentAvailable + '.');
             current.setAbortAction(true);
             return;
         }
 
-        // Update reserved quantity on the position (concurrency-safe via row lock)
+        // STEP 4: Update reserved on the fresh record
         var newReserved = reserved + quantity;
         var newAvailable = onHand - newReserved - unavailable;
         position.setValue('reserved', newReserved.toString());
@@ -106,10 +135,13 @@
         // Check integrity
         if (newAvailable < 0) {
             position.setValue('integrity_status', 'reconciliation_required');
+            gs.warn('[Retail Store Assistant] Reservation Lifecycle: negative available detected after reservation confirmation, marking reconciliation_required');
         }
 
         position.setValue('last_recalculated_on', now.getDisplayValue());
         position.update();
+
+        gs.info('[Retail Store Assistant] Reservation Lifecycle: reservation ' + reservationNumber + ' confirmed. Reserved updated: ' + reserved + ' → ' + newReserved);
 
         // Record confirmed_on timestamp
         current.setValue('confirmed_on', now.getDisplayValue());
@@ -118,26 +150,32 @@
     // Handle Ready for Pickup
     if (newStatus === 'ready_for_pickup') {
         current.setValue('ready_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Reservation Lifecycle: reservation ' + reservationNumber + ' marked ready for pickup');
     }
 
     // Handle Pickup: release commitment
     if (newStatus === 'picked_up') {
         current.setValue('pickup_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Reservation Lifecycle: reservation ' + reservationNumber + ' picked up — releasing commitment');
         releaseCommitment(store, sku, quantity, now);
     }
 
     // Handle Cancellation: release commitment
     if (newStatus === 'cancelled') {
         current.setValue('cancelled_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Reservation Lifecycle: reservation ' + reservationNumber + ' cancelled — releasing commitment');
         releaseCommitment(store, sku, quantity, now);
     }
 
     // Handle Expiry: release commitment
     if (newStatus === 'expired') {
+        gs.info('[Retail Store Assistant] Reservation Lifecycle: reservation ' + reservationNumber + ' expired — releasing commitment');
         releaseCommitment(store, sku, quantity, now);
     }
 
     function releaseCommitment(storeId, skuId, qty, timestamp) {
+        gs.debug('[Retail Store Assistant] Reservation Lifecycle: releaseCommitment called for store=' + storeId + ' sku=' + skuId + ' qty=' + qty);
+
         var pos = new GlideRecord('x_1945330_retail_0_inv_pos');
         pos.addQuery('store', storeId);
         pos.addQuery('sku', skuId);
@@ -151,6 +189,7 @@
 
             var updatedReserved = posReserved - qty;
             if (updatedReserved < 0) {
+                gs.warn('[Retail Store Assistant] Reservation Lifecycle: reserved would go negative (' + updatedReserved + '), clamping to 0');
                 updatedReserved = 0;
             }
             var updatedAvailable = posOnHand - updatedReserved - posUnavailable;
@@ -161,12 +200,17 @@
             // Check integrity
             if (updatedAvailable < 0) {
                 pos.setValue('integrity_status', 'reconciliation_required');
+                gs.warn('[Retail Store Assistant] Reservation Lifecycle: negative available after commitment release, marking reconciliation_required');
             } else {
                 pos.setValue('integrity_status', 'normal');
             }
 
             pos.setValue('last_recalculated_on', timestamp.getDisplayValue());
             pos.update();
+
+            gs.debug('[Retail Store Assistant] Reservation Lifecycle: commitment released — reserved updated: ' + posReserved + ' → ' + updatedReserved);
+        } else {
+            gs.error('[Retail Store Assistant] Reservation Lifecycle: cannot release commitment — no inventory position found for store=' + storeId + ' sku=' + skuId);
         }
     }
 })();

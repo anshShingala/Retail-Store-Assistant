@@ -35,6 +35,9 @@
     var sku = current.getValue('sku');
     var direction = current.getValue('movement_direction');
     var quantity = parseInt(current.getValue('quantity'), 10);
+    var txnNumber = current.getValue('transaction_number');
+
+    gs.info('[Retail Store Assistant] Update Inventory Position: processing transaction ' + txnNumber + ' — store=' + store + ' sku=' + sku + ' direction=' + direction + ' qty=' + quantity);
 
     // Find the existing Inventory Position for this Store + SKU
     var position = new GlideRecord('x_1945330_retail_0_inv_pos');
@@ -44,6 +47,8 @@
     position.query();
 
     if (!position.next()) {
+        gs.info('[Retail Store Assistant] Update Inventory Position: no existing position found for store=' + store + ' sku=' + sku + ' — creating new position');
+
         // Create a new Inventory Position for this Store + SKU
         var newPos = new GlideRecord('x_1945330_retail_0_inv_pos');
         newPos.initialize();
@@ -63,9 +68,11 @@
         position.setLimit(1);
         position.query();
         if (!position.next()) {
-            gs.error('Inventory Position Update: Failed to create position for store=' + store + ' sku=' + sku);
+            gs.error('[Retail Store Assistant] Update Inventory Position: failed to create position for store=' + store + ' sku=' + sku);
             return;
         }
+
+        gs.debug('[Retail Store Assistant] Update Inventory Position: new position created successfully');
     }
 
     // Apply inventory effect
@@ -87,6 +94,7 @@
     var integrityStatus = 'normal';
     if (newAvailable < 0) {
         integrityStatus = 'reconciliation_required';
+        gs.warn('[Retail Store Assistant] Update Inventory Position: negative available detected (' + newAvailable + ') after transaction ' + txnNumber + ', marking reconciliation_required');
     }
 
     // Update the position
@@ -99,6 +107,8 @@
     position.setValue('last_recalculated_on', now.getDisplayValue());
 
     position.update();
+
+    gs.info('[Retail Store Assistant] Update Inventory Position: position updated — on_hand: ' + currentOnHand + ' → ' + newOnHand + ', available: ' + newAvailable);
 })();
 ]]></script>
     <sys_name>Update Inventory Position</sys_name>

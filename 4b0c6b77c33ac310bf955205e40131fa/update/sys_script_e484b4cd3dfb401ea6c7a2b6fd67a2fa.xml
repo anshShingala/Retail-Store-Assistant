@@ -35,12 +35,15 @@
 
     // Only check outbound movements
     if (direction !== 'out') {
+        gs.debug('[Retail Store Assistant] Check Negative On-Hand: skipping — movement_direction is "' + direction + '" (not outbound)');
         return;
     }
 
     var store = current.getValue('store');
     var sku = current.getValue('sku');
     var quantity = parseInt(current.getValue('quantity'), 10);
+
+    gs.debug('[Retail Store Assistant] Check Negative On-Hand: checking outbound movement — store=' + store + ' sku=' + sku + ' quantity=' + quantity);
 
     // Find the Inventory Position for this Store + SKU
     var position = new GlideRecord('x_1945330_retail_0_inv_pos');
@@ -52,16 +55,21 @@
     var currentOnHand = 0;
     if (position.next()) {
         currentOnHand = parseInt(position.getValue('on_hand'), 10) || 0;
+    } else {
+        gs.debug('[Retail Store Assistant] Check Negative On-Hand: no inventory position found, assuming on_hand=0');
     }
 
     // Check if the outbound movement would make on_hand negative
     if (currentOnHand - quantity < 0) {
+        gs.error('[Retail Store Assistant] Check Negative On-Hand: rejected — outbound qty ' + quantity + ' would make on_hand negative (current on_hand=' + currentOnHand + ')');
         gs.addErrorMessage(
             'Inventory Transaction rejected: this outbound movement of ' + quantity +
             ' would produce negative On-Hand (current On-Hand: ' + currentOnHand +
             '). Invalid negative authoritative inventory is not allowed.'
         );
         current.setAbortAction(true);
+    } else {
+        gs.debug('[Retail Store Assistant] Check Negative On-Hand: passed — on_hand ' + currentOnHand + ' - ' + quantity + ' = ' + (currentOnHand - quantity) + ' (non-negative)');
     }
 })();
 ]]></script>

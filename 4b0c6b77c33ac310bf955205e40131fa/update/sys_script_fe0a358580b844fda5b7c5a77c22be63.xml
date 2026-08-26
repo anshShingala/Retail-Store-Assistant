@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>fe0a358580b844fda5b7c5a77c22be63</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_fe0a358580b844fda5b7c5a77c22be63</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_transfer</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Transfer Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function transferLifecycle() {
+    // Only process status changes
+    if (!current.status.changes()) {
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: no status change detected, skipping');
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var transferNumber = current.getValue('transfer_number');
+
+    gs.info('[Retail Store Assistant] Transfer Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for transfer ' + transferNumber);
+
+    // Define valid transitions
+    var validTransitions = {
+        'requested': ['approved', 'cancelled'],
+        'approved': ['shipped', 'cancelled'],
+        'shipped': ['received'],
+        'received': [],
+        'cancelled': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] Transfer Lifecycle: invalid transition "' + oldStatus + '" → "' + newStatus + '" for transfer ' + transferNumber);
+        gs.addErrorMessage('Transfer lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+
+    // Handle transition to approved
+    if (newStatus === 'approved') {
+        current.setValue('approved_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: transfer ' + transferNumber + ' approved');
+    }
+
+    // Handle transition to shipped
+    if (newStatus === 'shipped') {
+        var sourceStore = current.getValue('source_store');
+        var sku = current.getValue('sku');
+        var quantity = parseInt(current.getValue('quantity'), 10);
+
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: shipping transfer ' + transferNumber + ' — acquiring row lock on source Inventory Position');
+
+        // STEP 1: Acquire exclusive row lock on source store's Inventory Position
+        var lockGr = new GlideRecord('x_1945330_retail_0_inv_pos');
+        lockGr.addQuery('store', sourceStore);
+        lockGr.addQuery('sku', sku);
+        lockGr.setLimit(1);
+        lockGr.query();
+
+        if (!lockGr.next()) {
+            gs.error('[Retail Store Assistant] Transfer Lifecycle: no inventory position found for source store=' + sourceStore + ' sku=' + sku);
+            gs.addErrorMessage('Transfer shipment failed: no inventory position exists for the source store and SKU combination.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // Trivial update to acquire the row lock
+        lockGr.setValue('last_recalculated_on', now.getDisplayValue());
+        lockGr.update();
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: row lock acquired on source Inventory Position');
+
+        // STEP 2: RE-READ the position to get latest committed state
+        var position = new GlideRecord('x_1945330_retail_0_inv_pos');
+        position.addQuery('store', sourceStore);
+        position.addQuery('sku', sku);
+        position.setLimit(1);
+        position.query();
+
+        if (!position.next()) {
+            gs.error('[Retail Store Assistant] Transfer Lifecycle: inventory position disappeared after lock acquisition for source store=' + sourceStore + ' sku=' + sku);
+            gs.addErrorMessage('Transfer shipment failed: no inventory position exists for the source store and SKU combination.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // STEP 3: Check source available >= quantity
+        var onHand = parseInt(position.getValue('on_hand'), 10) || 0;
+        var reserved = parseInt(position.getValue('reserved'), 10) || 0;
+        var unavailable = parseInt(position.getValue('unavailable'), 10) || 0;
+        var sourceAvailable = onHand - reserved - unavailable;
+
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: source position state — on_hand=' + onHand + ' reserved=' + reserved + ' unavailable=' + unavailable + ' available=' + sourceAvailable + ' transfer_qty=' + quantity);
+
+        if (sourceAvailable < quantity) {
+            gs.error('[Retail Store Assistant] Transfer Lifecycle: insufficient source inventory for transfer ' + transferNumber + '. Required: ' + quantity + ', Available: ' + sourceAvailable);
+            gs.addErrorMessage('Transfer shipment failed: insufficient available inventory at source store. Required: ' + quantity + ', Available: ' + sourceAvailable + '.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        // STEP 4: Create Transfer Out Inventory Transaction
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: creating Transfer Out inventory transaction for transfer ' + transferNumber);
+
+        var txnOut = new GlideRecord('x_1945330_retail_0_inv_txn');
+        txnOut.initialize();
+        txnOut.setValue('transaction_number', 'TXN-XFEROUT-' + current.getValue('transfer_number'));
+        txnOut.setValue('transaction_type', 'transfer_out');
+        txnOut.setValue('sku', sku);
+        txnOut.setValue('store', sourceStore);
+        txnOut.setValue('movement_direction', 'out');
+        txnOut.setValue('quantity', quantity.toString());
+        txnOut.setValue('transaction_date', now.getDisplayValue());
+        txnOut.setValue('transfer', current.getUniqueValue());
+        txnOut.setValue('idempotency_key', 'XFER-OUT-' + current.getValue('idempotency_key'));
+        txnOut.setValue('posting_reference', 'Transfer ' + current.getValue('transfer_number') + ' shipment');
+        txnOut.setValue('posted_on', now.getDisplayValue());
+        txnOut.setValue('posted_by', gs.getUserID());
+        var txnOutId = txnOut.insert();
+
+        if (!txnOutId) {
+            gs.error('[Retail Store Assistant] Transfer Lifecycle: failed to create Transfer Out transaction for transfer ' + transferNumber);
+            gs.addErrorMessage('Transfer shipment failed: could not create the outbound inventory transaction.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: Transfer Out transaction created (sys_id=' + txnOutId + ') for transfer ' + transferNumber);
+
+        // Set shipped_on
+        current.setValue('shipped_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: transfer ' + transferNumber + ' shipped successfully');
+    }
+
+    // Handle transition to received
+    if (newStatus === 'received') {
+        var destinationStore = current.getValue('destination_store');
+        var rcvSku = current.getValue('sku');
+        var rcvQuantity = parseInt(current.getValue('quantity'), 10);
+
+        gs.debug('[Retail Store Assistant] Transfer Lifecycle: receiving transfer ' + transferNumber + ' — creating Transfer In inventory transaction');
+
+        // Create Transfer In Inventory Transaction
+        var txnIn = new GlideRecord('x_1945330_retail_0_inv_txn');
+        txnIn.initialize();
+        txnIn.setValue('transaction_number', 'TXN-XFERIN-' + current.getValue('transfer_number'));
+        txnIn.setValue('transaction_type', 'transfer_in');
+        txnIn.setValue('sku', rcvSku);
+        txnIn.setValue('store', destinationStore);
+        txnIn.setValue('movement_direction', 'in');
+        txnIn.setValue('quantity', rcvQuantity.toString());
+        txnIn.setValue('transaction_date', now.getDisplayValue());
+        txnIn.setValue('transfer', current.getUniqueValue());
+        txnIn.setValue('idempotency_key', 'XFER-IN-' + current.getValue('idempotency_key'));
+        txnIn.setValue('posting_reference', 'Transfer ' + current.getValue('transfer_number') + ' receipt');
+        txnIn.setValue('posted_on', now.getDisplayValue());
+        txnIn.setValue('posted_by', gs.getUserID());
+        var txnInId = txnIn.insert();
+
+        if (!txnInId) {
+            gs.error('[Retail Store Assistant] Transfer Lifecycle: failed to create Transfer In transaction for transfer ' + transferNumber);
+            gs.addErrorMessage('Transfer receipt failed: could not create the inbound inventory transaction.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: Transfer In transaction created (sys_id=' + txnInId + ') for transfer ' + transferNumber);
+
+        // Set received_on
+        current.setValue('received_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: transfer ' + transferNumber + ' received successfully');
+    }
+
+    // Handle transition to cancelled (only from requested or approved)
+    if (newStatus === 'cancelled') {
+        current.setValue('cancelled_on', now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Transfer Lifecycle: transfer ' + transferNumber + ' cancelled from status "' + oldStatus + '"');
+    }
+})();
+]]></script>
+    <sys_name>Transfer Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

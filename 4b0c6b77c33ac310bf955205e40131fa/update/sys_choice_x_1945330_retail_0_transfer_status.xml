@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="status" table="x_1945330_retail_0_transfer" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>c94a9fbf9aa24ed1b1d5b179f3eaab7f</sys_id>
+      <element>status</element>
+      <name>x_1945330_retail_0_transfer</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_package display_value="x_1945330_retail_0" source="4b0c6b77c33ac310bf955205e40131fa">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+      <sys_update_name>sys_choice_x_1945330_retail_0_transfer_status</sys_update_name>
+      <sys_name>status</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c2c3f901796f44c3aac78399a4070bd9</sys_id>
+      <name>x_1945330_retail_0_transfer</name>
+      <element>status</element>
+      <label>Requested</label>
+      <value>requested</value>
+      <sequence>1</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>5650b73804a744f59f5f15d5327bc62d</sys_id>
+      <name>x_1945330_retail_0_transfer</name>
+      <element>status</element>
+      <label>Approved</label>
+      <value>approved</value>
+      <sequence>2</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>8982a0685b9d4f978ddb6953604226e2</sys_id>
+      <name>x_1945330_retail_0_transfer</name>
+      <element>status</element>
+      <label>Shipped</label>
+      <value>shipped</value>
+      <sequence>3</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c9ba208103e341c9a6ad3a05dbf3c72d</sys_id>
+      <name>x_1945330_retail_0_transfer</name>
+      <element>status</element>
+      <label>Received</label>
+      <value>received</value>
+      <sequence>4</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>a02c533268ee43ec815a05114a92da6c</sys_id>
+      <name>x_1945330_retail_0_transfer</name>
+      <element>status</element>
+      <label>Cancelled</label>
+      <value>cancelled</value>
+      <sequence>5</sequence>
+      <inactive>false</inactive>
+      <inactive_on_update>false</inactive_on_update>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

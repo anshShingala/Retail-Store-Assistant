@@ -33,7 +33,10 @@
     <script><![CDATA[(function validateQuantity() {
     var quantity = parseInt(current.getValue('quantity'), 10);
 
+    gs.debug('[Retail Store Assistant] Validate Quantity: checking transaction quantity value: ' + current.getValue('quantity'));
+
     if (isNaN(quantity) || quantity <= 0) {
+        gs.error('[Retail Store Assistant] Validate Quantity: rejected — quantity must be positive, got: ' + current.getValue('quantity'));
         gs.addErrorMessage('Inventory Transaction rejected: quantity must be a positive integer greater than zero.');
         current.setAbortAction(true);
         return;
@@ -41,6 +44,7 @@
 
     // Ensure stored value is the clean integer
     current.setValue('quantity', quantity.toString());
+    gs.debug('[Retail Store Assistant] Validate Quantity: passed — quantity=' + quantity);
 })();
 ]]></script>
     <sys_name>Validate Positive Quantity</sys_name>

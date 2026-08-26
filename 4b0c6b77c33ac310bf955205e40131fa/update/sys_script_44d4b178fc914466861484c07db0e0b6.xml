@@ -33,7 +33,10 @@
     <script><![CDATA[(function checkReservationIdempotency() {
     var idempotencyKey = current.getValue('idempotency_key');
 
+    gs.debug('[Retail Store Assistant] Check Reservation Idempotency: validating key "' + idempotencyKey + '"');
+
     if (!idempotencyKey) {
+        gs.error('[Retail Store Assistant] Check Reservation Idempotency: rejected — idempotency_key is missing or empty');
         gs.addErrorMessage('Reservation rejected: idempotency_key is required.');
         current.setAbortAction(true);
         return;
@@ -45,8 +48,11 @@
     existing.query();
 
     if (existing.hasNext()) {
+        gs.warn('[Retail Store Assistant] Check Reservation Idempotency: duplicate detected — key "' + idempotencyKey + '" already exists');
         gs.addErrorMessage('Reservation rejected: idempotency_key "' + idempotencyKey + '" already exists. Duplicate reservation requests are not allowed.');
         current.setAbortAction(true);
+    } else {
+        gs.debug('[Retail Store Assistant] Check Reservation Idempotency: passed — key "' + idempotencyKey + '" is unique');
     }
 })();
 ]]></script>

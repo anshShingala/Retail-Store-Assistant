@@ -33,13 +33,17 @@
     <script><![CDATA[(function validateReservationQuantity() {
     var quantity = parseInt(current.getValue('quantity'), 10);
 
+    gs.debug('[Retail Store Assistant] Validate Reservation Quantity: checking value: ' + current.getValue('quantity'));
+
     if (isNaN(quantity) || quantity <= 0) {
+        gs.error('[Retail Store Assistant] Validate Reservation Quantity: rejected — quantity must be positive, got: ' + current.getValue('quantity'));
         gs.addErrorMessage('Reservation rejected: quantity must be a positive integer greater than zero.');
         current.setAbortAction(true);
         return;
     }
 
     current.setValue('quantity', quantity.toString());
+    gs.debug('[Retail Store Assistant] Validate Reservation Quantity: passed — quantity=' + quantity);
 })();
 ]]></script>
     <sys_name>Validate Reservation Quantity</sys_name>

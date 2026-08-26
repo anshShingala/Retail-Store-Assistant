@@ -31,6 +31,7 @@
     <rest_variables/>
     <role_conditions/>
     <script><![CDATA[(function preventModification() {
+    gs.warn('[Retail Store Assistant] Prevent Modification: attempt to modify posted transaction ' + current.getValue('transaction_number') + ' by user ' + gs.getUserID());
     gs.addErrorMessage('Inventory Transaction records are immutable. Posted transactions cannot be modified. Use a Correction or Reversal transaction to address errors.');
     current.setAbortAction(true);
 })();

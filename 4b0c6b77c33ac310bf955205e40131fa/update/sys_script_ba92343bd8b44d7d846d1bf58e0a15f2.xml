@@ -31,13 +31,17 @@
     <rest_variables/>
     <role_conditions/>
     <script><![CDATA[(function setReservationDefaults() {
+    gs.debug('[Retail Store Assistant] Set Reservation Defaults: setting defaults for new reservation');
+
     // Set default status to 'requested' and record requested_on timestamp
     if (!current.getValue('status')) {
         current.setValue('status', 'requested');
+        gs.debug('[Retail Store Assistant] Set Reservation Defaults: status set to "requested"');
     }
 
     var now = new GlideDateTime();
     current.setValue('requested_on', now.getDisplayValue());
+    gs.info('[Retail Store Assistant] Set Reservation Defaults: defaults applied — status=' + current.getValue('status') + ', requested_on=' + now.getDisplayValue());
 })();
 ]]></script>
     <sys_name>Set Reservation Defaults</sys_name>

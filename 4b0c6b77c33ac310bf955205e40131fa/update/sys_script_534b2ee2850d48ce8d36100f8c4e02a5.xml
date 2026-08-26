@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>534b2ee2850d48ce8d36100f8c4e02a5</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_534b2ee2850d48ce8d36100f8c4e02a5</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>false</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_transfer</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Validate Transfer</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function validateTransfer() {
+    gs.debug('[Retail Store Assistant] Validate Transfer: processing new transfer insert');
+
+    // Validate quantity > 0
+    var quantity = parseInt(current.getValue('quantity'), 10);
+    if (isNaN(quantity) || quantity <= 0) {
+        gs.error('[Retail Store Assistant] Validate Transfer: rejected — quantity must be positive, got: ' + current.getValue('quantity'));
+        gs.addErrorMessage('Transfer rejected: quantity must be a positive integer greater than zero.');
+        current.setAbortAction(true);
+        return;
+    }
+    current.setValue('quantity', quantity.toString());
+    gs.debug('[Retail Store Assistant] Validate Transfer: quantity validated — ' + quantity);
+
+    // Validate source_store != destination_store
+    var sourceStore = current.getValue('source_store');
+    var destinationStore = current.getValue('destination_store');
+    if (sourceStore === destinationStore) {
+        gs.error('[Retail Store Assistant] Validate Transfer: rejected — source_store and destination_store are the same (' + sourceStore + ')');
+        gs.addErrorMessage('Transfer rejected: source store and destination store must be different.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate Transfer: stores validated — source=' + sourceStore + ' destination=' + destinationStore);
+
+    // Check idempotency_key uniqueness
+    var idempotencyKey = current.getValue('idempotency_key');
+    if (!idempotencyKey) {
+        gs.error('[Retail Store Assistant] Validate Transfer: rejected — idempotency_key is missing or empty');
+        gs.addErrorMessage('Transfer rejected: idempotency_key is required.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var existing = new GlideRecord('x_1945330_retail_0_transfer');
+    existing.addQuery('idempotency_key', idempotencyKey);
+    existing.setLimit(1);
+    existing.query();
+
+    if (existing.hasNext()) {
+        gs.warn('[Retail Store Assistant] Validate Transfer: duplicate detected — idempotency_key "' + idempotencyKey + '" already exists');
+        gs.addErrorMessage('Transfer rejected: idempotency_key "' + idempotencyKey + '" already exists. Duplicate transfer requests are not allowed.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate Transfer: idempotency_key "' + idempotencyKey + '" is unique');
+
+    // Set defaults: status=requested, requested_on=now
+    current.setValue('status', 'requested');
+    var now = new GlideDateTime();
+    current.setValue('requested_on', now.getDisplayValue());
+
+    gs.info('[Retail Store Assistant] Validate Transfer: validation passed — transfer defaults set (status=requested, requested_on=' + now.getDisplayValue() + ')');
+})();
+]]></script>
+    <sys_name>Validate Transfer</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

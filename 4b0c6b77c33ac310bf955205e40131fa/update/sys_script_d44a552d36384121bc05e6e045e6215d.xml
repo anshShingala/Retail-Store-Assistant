@@ -31,6 +31,7 @@
     <rest_variables/>
     <role_conditions/>
     <script><![CDATA[(function preventDeletion() {
+    gs.warn('[Retail Store Assistant] Prevent Deletion: attempt to delete posted transaction ' + current.getValue('transaction_number') + ' by user ' + gs.getUserID());
     gs.addErrorMessage('Inventory Transaction records cannot be deleted. Posted transactions are the authoritative inventory movement ledger and must be preserved.');
     current.setAbortAction(true);
 })();
