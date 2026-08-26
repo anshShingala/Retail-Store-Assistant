@@ -12,7 +12,7 @@
     <choice_field/>
     <choice_table/>
     <column_label>Status</column_label>
-    <default_value>open</default_value>
+    <default_value>created</default_value>
     <dependent/>
     <dependent_on_field/>
     <display>false</display>

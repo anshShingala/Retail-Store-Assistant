@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary">
-  <sys_dictionary action="INSERT_OR_UPDATE" element="counted_quantity" table="x_1945330_retail_0_phys_count">
-    <sys_id>158a7d1d4f1f468ab9de1dfba7e4b2d6</sys_id>
+  <sys_dictionary action="INSERT_OR_UPDATE" element="status" table="x_1945330_retail_0_discrepancy">
+    <sys_id>f6aa384c131b4dd2a4839a315a920eee</sys_id>
     <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_dictionary_x_1945330_retail_0_phys_count_counted_quantity</sys_update_name>
+    <sys_update_name>sys_dictionary_x_1945330_retail_0_discrepancy_status</sys_update_name>
     <active>true</active>
     <array>false</array>
     <attributes/>
     <audit>false</audit>
     <calculation/>
-    <choice/>
+    <choice>3</choice>
     <choice_field/>
     <choice_table/>
-    <column_label>Counted Quantity</column_label>
-    <default_value/>
+    <column_label>Status</column_label>
+    <default_value>new</default_value>
     <dependent/>
     <dependent_on_field/>
     <display>false</display>
     <dynamic_creation/>
     <dynamic_creation_script/>
     <dynamic_ref_qual/>
-    <element>counted_quantity</element>
+    <element>status</element>
     <element_reference>false</element_reference>
     <formula/>
     <function_definition/>
     <function_field>false</function_field>
-    <internal_type>integer</internal_type>
+    <internal_type>choice</internal_type>
     <mandatory>true</mandatory>
     <max_length>40</max_length>
-    <name>x_1945330_retail_0_phys_count</name>
+    <name>x_1945330_retail_0_discrepancy</name>
     <primary>false</primary>
     <read_only>false</read_only>
     <read_only_option/>

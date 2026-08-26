@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>9a992dfd2ce741b0a7993b4ee882f1ed</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_9a992dfd2ce741b0a7993b4ee882f1ed</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_discrepancy</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Discrepancy Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function discrepancyLifecycle() {
+    // Only process status changes
+    if (!current.status.changes()) {
+        gs.debug('[Retail Store Assistant] Discrepancy Lifecycle: no status change for discrepancy ' + current.getValue('discrepancy_number'));
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var discNumber = current.getValue('discrepancy_number');
+
+    gs.info('[Retail Store Assistant] Discrepancy Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for discrepancy ' + discNumber);
+
+    // Define valid transitions (V2.8: New → Under Investigation → Resolved → Closed)
+    var validTransitions = {
+        'new': ['under_investigation'],
+        'under_investigation': ['resolved'],
+        'resolved': ['closed'],
+        'closed': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] Discrepancy Lifecycle: invalid transition "' + oldStatus + '" → "' + newStatus + '" for discrepancy ' + discNumber);
+        gs.addErrorMessage('Discrepancy lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    // CRITICAL: Do NOT modify Inventory Position
+    // CRITICAL: Do NOT create an Inventory Transaction
+    // The correction path is: Discrepancy → Investigation → Adjustment Request → Inventory Transaction
+
+    gs.info('[Retail Store Assistant] Discrepancy Lifecycle: discrepancy ' + discNumber + ' transitioned to "' + newStatus + '"');
+})();
+]]></script>
+    <sys_name>Discrepancy Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

@@ -33,45 +33,29 @@
     <script><![CDATA[(function validatePhysicalCount() {
     gs.debug('[Retail Store Assistant] Validate Physical Count: processing new count insert');
 
-    // Validate idempotency_key
-    var idempotencyKey = current.getValue('idempotency_key');
-    if (!idempotencyKey) {
-        gs.error('[Retail Store Assistant] Validate Physical Count: rejected — idempotency_key is missing');
-        gs.addErrorMessage('Physical Count rejected: idempotency_key is required.');
-        current.setAbortAction(true);
-        return;
-    }
+    var countNumber = current.getValue('count_number');
+    var store = current.getValue('store');
+    var sku = current.getValue('sku');
 
-    var existing = new GlideRecord('x_1945330_retail_0_phys_count');
-    existing.addQuery('idempotency_key', idempotencyKey);
-    existing.setLimit(1);
-    existing.query();
-    if (existing.hasNext()) {
-        gs.warn('[Retail Store Assistant] Validate Physical Count: duplicate detected — idempotency_key "' + idempotencyKey + '" already exists');
-        gs.addErrorMessage('Physical Count rejected: idempotency_key "' + idempotencyKey + '" already exists. Duplicate count submissions are not allowed.');
-        current.setAbortAction(true);
-        return;
-    }
-    gs.debug('[Retail Store Assistant] Validate Physical Count: idempotency_key "' + idempotencyKey + '" is unique');
-
-    // Validate counted_quantity if provided (must not be negative)
+    // Validate counted_quantity >= 0
     var countedQtyStr = current.getValue('counted_quantity');
     if (countedQtyStr !== null && countedQtyStr !== '') {
         var countedQty = parseInt(countedQtyStr, 10);
         if (isNaN(countedQty) || countedQty < 0) {
-            gs.error('[Retail Store Assistant] Validate Physical Count: rejected — counted_quantity must be a non-negative integer, got: ' + countedQtyStr);
+            gs.error('[Retail Store Assistant] Validate Physical Count: rejected — counted_quantity must be non-negative, got: ' + countedQtyStr);
             gs.addErrorMessage('Physical Count rejected: counted quantity must be a non-negative integer.');
             current.setAbortAction(true);
             return;
         }
+        gs.debug('[Retail Store Assistant] Validate Physical Count: counted_quantity=' + countedQty + ' validated');
     }
 
-    // Set defaults
+    // Set default status to 'created'
     if (!current.getValue('status')) {
-        current.setValue('status', 'open');
+        current.setValue('status', 'created');
     }
 
-    gs.info('[Retail Store Assistant] Validate Physical Count: validation passed — count_number=' + current.getValue('count_number') + ' store=' + current.getValue('store') + ' sku=' + current.getValue('sku'));
+    gs.info('[Retail Store Assistant] Validate Physical Count: validation passed — count_number=' + countNumber + ' store=' + store + ' sku=' + sku);
 })();
 ]]></script>
     <sys_name>Validate Physical Count</sys_name>

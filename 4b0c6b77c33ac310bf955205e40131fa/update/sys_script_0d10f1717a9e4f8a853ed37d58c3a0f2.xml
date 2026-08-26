@@ -31,7 +31,7 @@
     <rest_variables/>
     <role_conditions/>
     <script><![CDATA[(function physicalCountLifecycle() {
-    // Only process status changes
+    // Only process status changes for lifecycle logic
     if (!current.status.changes()) {
         // Validate counted_quantity if being updated (must not be negative)
         if (current.counted_quantity.changes()) {
@@ -46,7 +46,16 @@
                 }
             }
         }
-        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: no status change for count ' + current.getValue('count_number') + ', skipping lifecycle logic');
+
+        // Protect snapshot immutability: prevent changes to system_snapshot_quantity and snapshot_on after capture
+        if (current.system_snapshot_quantity.changes() && previous.getValue('system_snapshot_quantity') !== '' && previous.getValue('system_snapshot_quantity') !== null) {
+            gs.warn('[Retail Store Assistant] Physical Count Lifecycle: attempt to modify immutable system_snapshot_quantity on count ' + current.getValue('count_number'));
+            gs.addErrorMessage('Physical Count: system snapshot quantity cannot be modified after capture.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: non-status update for count ' + current.getValue('count_number'));
         return;
     }
 
@@ -56,12 +65,11 @@
 
     gs.info('[Retail Store Assistant] Physical Count Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for count ' + countNumber);
 
-    // Define valid transitions
+    // Define valid transitions (V2.8: Created → In Progress → Submitted)
     var validTransitions = {
-        'open': ['in_progress', 'cancelled'],
-        'in_progress': ['completed', 'cancelled'],
-        'completed': [],
-        'cancelled': []
+        'created': ['in_progress'],
+        'in_progress': ['submitted'],
+        'submitted': []
     };
 
     var allowed = validTransitions[oldStatus] || [];
@@ -82,73 +90,102 @@
 
     var now = new GlideDateTime();
 
-    // Handle transition to In Progress: capture expected_quantity snapshot
+    // Handle transition to In Progress: capture system snapshot
     if (newStatus === 'in_progress') {
         var store = current.getValue('store');
         var sku = current.getValue('sku');
 
-        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: capturing expected_quantity snapshot for count ' + countNumber + ' store=' + store + ' sku=' + sku);
+        gs.debug('[Retail Store Assistant] Physical Count Lifecycle: capturing system snapshot for count ' + countNumber + ' store=' + store + ' sku=' + sku);
 
-        // Snapshot expected_quantity from Inventory Position.on_hand
+        // Snapshot system_snapshot_quantity from Inventory Position.on_hand
         var position = new GlideRecord('x_1945330_retail_0_inv_pos');
         position.addQuery('store', store);
         position.addQuery('sku', sku);
         position.setLimit(1);
         position.query();
 
-        var expectedQty = 0;
+        var snapshotQty = 0;
         if (position.next()) {
-            expectedQty = parseInt(position.getValue('on_hand'), 10) || 0;
-            gs.debug('[Retail Store Assistant] Physical Count Lifecycle: found inventory position — on_hand=' + expectedQty);
+            snapshotQty = parseInt(position.getValue('on_hand'), 10) || 0;
+            gs.debug('[Retail Store Assistant] Physical Count Lifecycle: found inventory position — on_hand=' + snapshotQty);
         } else {
-            gs.warn('[Retail Store Assistant] Physical Count Lifecycle: no inventory position found for store=' + store + ' sku=' + sku + ' — defaulting expected_quantity to 0');
+            gs.warn('[Retail Store Assistant] Physical Count Lifecycle: no inventory position found for store=' + store + ' sku=' + sku + ' — defaulting system_snapshot_quantity to 0');
         }
 
-        current.setValue('expected_quantity', expectedQty.toString());
-        current.setValue('counted_on', now.getDisplayValue());
+        current.setValue('system_snapshot_quantity', snapshotQty.toString());
+        current.setValue('snapshot_on', now.getDisplayValue());
 
-        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' moved to In Progress — expected_quantity=' + expectedQty + ' counted_on=' + now.getDisplayValue());
+        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' moved to In Progress — system_snapshot_quantity=' + snapshotQty + ' snapshot_on=' + now.getDisplayValue());
     }
 
-    // Handle transition to Completed: calculate variance, finalize
-    if (newStatus === 'completed') {
-        // Validate counted_quantity is provided
+    // Handle transition to Submitted: validate and finalize
+    if (newStatus === 'submitted') {
+        // Validate counted_quantity is provided and >= 0
         var countedQtyStr = current.getValue('counted_quantity');
         if (countedQtyStr === null || countedQtyStr === '') {
-            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot complete count ' + countNumber + ' — counted_quantity is required');
-            gs.addErrorMessage('Physical Count cannot be completed: counted quantity must be entered before finalizing.');
+            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot submit count ' + countNumber + ' — counted_quantity is required');
+            gs.addErrorMessage('Physical Count cannot be submitted: counted quantity must be recorded.');
             current.setAbortAction(true);
             return;
         }
 
         var countedQty = parseInt(countedQtyStr, 10);
         if (isNaN(countedQty) || countedQty < 0) {
-            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot complete count ' + countNumber + ' — counted_quantity must be non-negative, got: ' + countedQtyStr);
-            gs.addErrorMessage('Physical Count cannot be completed: counted quantity must be a non-negative integer.');
+            gs.error('[Retail Store Assistant] Physical Count Lifecycle: cannot submit count ' + countNumber + ' — counted_quantity must be non-negative, got: ' + countedQtyStr);
+            gs.addErrorMessage('Physical Count cannot be submitted: counted quantity must be a non-negative integer.');
             current.setAbortAction(true);
             return;
         }
 
-        // Calculate variance = counted_quantity - expected_quantity
-        var expectedQty = parseInt(current.getValue('expected_quantity'), 10) || 0;
-        var variance = countedQty - expectedQty;
+        // Set counted_on if not already set
+        if (!current.getValue('counted_on')) {
+            current.setValue('counted_on', now.getDisplayValue());
+        }
 
-        current.setValue('variance', variance.toString());
-        current.setValue('completed_on', now.getDisplayValue());
+        // Calculate variance for discrepancy evaluation
+        var snapshotQty = parseInt(current.getValue('system_snapshot_quantity'), 10) || 0;
+        var variance = countedQty - snapshotQty;
 
-        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' completed — counted_quantity=' + countedQty + ' expected_quantity=' + expectedQty + ' variance=' + variance);
+        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' submitted — counted_quantity=' + countedQty + ' system_snapshot_quantity=' + snapshotQty + ' variance=' + variance);
 
         // CRITICAL: Do NOT modify Inventory Position
         // CRITICAL: Do NOT create an Inventory Transaction
-        // The discrepancy path handles inventory corrections
-        if (variance !== 0) {
-            gs.info('[Retail Store Assistant] Physical Count Lifecycle: non-zero variance (' + variance + ') detected for count ' + countNumber + ' — discrepancy evaluation required');
-        }
-    }
 
-    // Handle cancellation
-    if (newStatus === 'cancelled') {
-        gs.info('[Retail Store Assistant] Physical Count Lifecycle: count ' + countNumber + ' cancelled from status "' + oldStatus + '"');
+        // Create Discrepancy if variance is non-zero
+        if (variance !== 0) {
+            gs.info('[Retail Store Assistant] Physical Count Lifecycle: non-zero variance (' + variance + ') — creating Discrepancy record');
+
+            var discrepancy = new GlideRecord('x_1945330_retail_0_discrepancy');
+            discrepancy.initialize();
+            discrepancy.setValue('discrepancy_number', 'DISC-' + countNumber);
+            discrepancy.setValue('physical_count', current.getUniqueValue());
+            discrepancy.setValue('store', current.getValue('store'));
+            discrepancy.setValue('sku', current.getValue('sku'));
+            discrepancy.setValue('system_quantity', snapshotQty.toString());
+            discrepancy.setValue('counted_quantity', countedQty.toString());
+            discrepancy.setValue('variance', variance.toString());
+
+            // Determine discrepancy type
+            if (variance < 0) {
+                discrepancy.setValue('discrepancy_type', 'shortage');
+                gs.debug('[Retail Store Assistant] Physical Count Lifecycle: discrepancy type = shortage (counted < system)');
+            } else {
+                discrepancy.setValue('discrepancy_type', 'overage');
+                gs.debug('[Retail Store Assistant] Physical Count Lifecycle: discrepancy type = overage (counted > system)');
+            }
+
+            discrepancy.setValue('status', 'new');
+            discrepancy.setValue('detected_on', now.getDisplayValue());
+
+            var discId = discrepancy.insert();
+            if (discId) {
+                gs.info('[Retail Store Assistant] Physical Count Lifecycle: Discrepancy created (sys_id=' + discId + ') discrepancy_number=DISC-' + countNumber + ' variance=' + variance);
+            } else {
+                gs.error('[Retail Store Assistant] Physical Count Lifecycle: FAILED to create Discrepancy for count ' + countNumber);
+            }
+        } else {
+            gs.info('[Retail Store Assistant] Physical Count Lifecycle: zero variance — no Discrepancy required for count ' + countNumber);
+        }
     }
 })();
 ]]></script>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_dictionary">
-  <sys_dictionary action="INSERT_OR_UPDATE" element="counted_quantity" table="x_1945330_retail_0_phys_count">
-    <sys_id>158a7d1d4f1f468ab9de1dfba7e4b2d6</sys_id>
+  <sys_dictionary action="INSERT_OR_UPDATE" element="assigned_to" table="x_1945330_retail_0_discrepancy">
+    <sys_id>93e682804f394fe6bbc57a77340caf80</sys_id>
     <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_dictionary_x_1945330_retail_0_phys_count_counted_quantity</sys_update_name>
+    <sys_update_name>sys_dictionary_x_1945330_retail_0_discrepancy_assigned_to</sys_update_name>
     <active>true</active>
     <array>false</array>
     <attributes/>
@@ -11,7 +11,7 @@
     <choice/>
     <choice_field/>
     <choice_table/>
-    <column_label>Counted Quantity</column_label>
+    <column_label>Assigned To</column_label>
     <default_value/>
     <dependent/>
     <dependent_on_field/>
@@ -19,19 +19,19 @@
     <dynamic_creation/>
     <dynamic_creation_script/>
     <dynamic_ref_qual/>
-    <element>counted_quantity</element>
+    <element>assigned_to</element>
     <element_reference>false</element_reference>
     <formula/>
     <function_definition/>
     <function_field>false</function_field>
-    <internal_type>integer</internal_type>
-    <mandatory>true</mandatory>
-    <max_length>40</max_length>
-    <name>x_1945330_retail_0_phys_count</name>
+    <internal_type>reference</internal_type>
+    <mandatory>false</mandatory>
+    <max_length>32</max_length>
+    <name>x_1945330_retail_0_discrepancy</name>
     <primary>false</primary>
     <read_only>false</read_only>
     <read_only_option/>
-    <reference/>
+    <reference>sys_user</reference>
     <reference_cascade_rule/>
     <reference_floats/>
     <reference_key/>

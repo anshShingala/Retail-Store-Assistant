@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>0036f0a2d33849518ff442a2f2db4a88</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_app_module_0036f0a2d33849518ff442a2f2db4a88</sys_update_name>
+    <active>true</active>
+    <application>5975a1097fcb4d49818d487eee791737</application>
+    <hint>View and manage inventory discrepancies from physical counts</hint>
+    <link_type>LIST</link_type>
+    <name>x_1945330_retail_0_discrepancy</name>
+    <order>1000</order>
+    <title>Discrepancies</title>
+  </sys_app_module>
+</record_update>
