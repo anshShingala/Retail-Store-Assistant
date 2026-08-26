@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>57c5ac8e09b04605b0dbeda6c012d49b</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_57c5ac8e09b04605b0dbeda6c012d49b</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_bus_policy</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Validate Business Policy</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function validateBusinessPolicy() {
+    gs.debug('[Retail Store Assistant] Validate Business Policy: processing record — policy_number=' + current.getValue('policy_number') + ' version=' + current.getValue('version'));
+
+    var policyNumber = current.getValue('policy_number');
+    var version = current.getValue('version');
+    var policyType = current.getValue('policy_type');
+
+    // ==========================================
+    // 1. Composite uniqueness: policy_number + version
+    // ==========================================
+    var duplicate = new GlideRecord('x_1945330_retail_0_bus_policy');
+    duplicate.addQuery('policy_number', policyNumber);
+    duplicate.addQuery('version', version);
+    // Exclude current record on update
+    if (!current.isNewRecord()) {
+        duplicate.addQuery('sys_id', '!=', current.getUniqueValue());
+    }
+    duplicate.setLimit(1);
+    duplicate.query();
+
+    if (duplicate.hasNext()) {
+        gs.error('[Retail Store Assistant] Validate Business Policy: REJECTED — duplicate policy_number + version combination: "' + policyNumber + '" v' + version);
+        gs.addErrorMessage('Business Policy rejected: a policy with number "' + policyNumber + '" and version "' + version + '" already exists. The combination must be unique.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate Business Policy: composite key "' + policyNumber + '" + "' + version + '" is unique');
+
+    // ==========================================
+    // 2. Effective period overlap prevention
+    // ==========================================
+    var effectiveFrom = current.getValue('effective_from');
+    if (!effectiveFrom) {
+        gs.error('[Retail Store Assistant] Validate Business Policy: REJECTED — effective_from is required for policy "' + policyNumber + '" v' + version);
+        gs.addErrorMessage('Business Policy rejected: effective_from is required.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var effectiveTo = current.getValue('effective_to');
+
+    // Check for overlapping effective periods among same policy_number versions
+    var overlap = new GlideRecord('x_1945330_retail_0_bus_policy');
+    overlap.addQuery('policy_number', policyNumber);
+    if (!current.isNewRecord()) {
+        overlap.addQuery('sys_id', '!=', current.getUniqueValue());
+    }
+    overlap.query();
+
+    while (overlap.next()) {
+        var existingFrom = overlap.getValue('effective_from');
+        var existingTo = overlap.getValue('effective_to');
+
+        // Determine overlap:
+        // Two periods overlap if: start1 < end2 AND start2 < end1
+        // If no end date, treat as infinite (always overlaps with any period starting before it)
+        var newStart = new GlideDateTime(effectiveFrom);
+        var existStart = new GlideDateTime(existingFrom);
+
+        var newEnd = null;
+        if (effectiveTo) {
+            newEnd = new GlideDateTime(effectiveTo);
+        }
+
+        var existEnd = null;
+        if (existingTo) {
+            existEnd = new GlideDateTime(existingTo);
+        }
+
+        // Check overlap logic
+        var startsBeforeExistingEnds = true;
+        if (existEnd) {
+            startsBeforeExistingEnds = newStart.compareTo(existEnd) < 0;
+        }
+
+        var existingStartsBeforeNewEnds = true;
+        if (newEnd) {
+            existingStartsBeforeNewEnds = existStart.compareTo(newEnd) < 0;
+        }
+
+        if (startsBeforeExistingEnds && existingStartsBeforeNewEnds) {
+            gs.error('[Retail Store Assistant] Validate Business Policy: REJECTED — effective period overlap detected for policy "' + policyNumber + '" between version "' + version + '" and existing version "' + overlap.getValue('version') + '"');
+            gs.addErrorMessage('Business Policy rejected: effective period overlaps with existing version "' + overlap.getValue('version') + '" (effective ' + existingFrom + ' to ' + (existingTo || 'indefinite') + '). For a given policy identity, applicable versions must not have overlapping effective periods.');
+            current.setAbortAction(true);
+            return;
+        }
+    }
+    gs.debug('[Retail Store Assistant] Validate Business Policy: no effective period overlap detected');
+
+    // ==========================================
+    // 3. Activation validation
+    // ==========================================
+    var isActive = current.getValue('active') === '1' || current.getValue('active') === 'true';
+
+    if (isActive) {
+        // Set activated_on if not already set
+        if (!current.getValue('activated_on')) {
+            var now = new GlideDateTime();
+            current.setValue('activated_on', now.getDisplayValue());
+            gs.debug('[Retail Store Assistant] Validate Business Policy: auto-set activated_on for policy "' + policyNumber + '" v' + version);
+        }
+
+        // Validate authorized_by is present for active policies
+        if (!current.getValue('authorized_by')) {
+            gs.warn('[Retail Store Assistant] Validate Business Policy: active policy "' + policyNumber + '" v' + version + ' has no authorized_by — policy activation without authorization');
+        }
+    }
+
+    // Handle retirement: if active is being set to false and was previously active
+    if (!current.isNewRecord() && !isActive && (previous.getValue('active') === '1' || previous.getValue('active') === 'true')) {
+        if (!current.getValue('retired_on')) {
+            var retireNow = new GlideDateTime();
+            current.setValue('retired_on', retireNow.getDisplayValue());
+            gs.info('[Retail Store Assistant] Validate Business Policy: policy "' + policyNumber + '" v' + version + ' retired — retired_on set');
+        }
+    }
+
+    gs.info('[Retail Store Assistant] Validate Business Policy: validation passed — policy_number="' + policyNumber + '" version="' + version + '" type="' + policyType + '" active=' + isActive);
+})();
+]]></script>
+    <sys_name>Validate Business Policy</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>
