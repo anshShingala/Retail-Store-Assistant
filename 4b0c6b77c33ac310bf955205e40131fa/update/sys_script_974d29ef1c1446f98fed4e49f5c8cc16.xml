@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>974d29ef1c1446f98fed4e49f5c8cc16</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_974d29ef1c1446f98fed4e49f5c8cc16</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>true</action_insert>
+    <action_query>false</action_query>
+    <action_update>false</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_ai_analysis</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Validate AI Analysis</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function validateAiAnalysisInsert() {
+    gs.debug('[Retail Store Assistant] Validate AI Analysis: processing new insert — analysis_number=' + current.getValue('analysis_number'));
+
+    // Validate investigation reference
+    var investigation = current.getValue('investigation');
+    if (!investigation) {
+        gs.error('[Retail Store Assistant] Validate AI Analysis: rejected — investigation reference is required');
+        gs.addErrorMessage('AI Analysis rejected: an Investigation reference is required.');
+        current.setAbortAction(true);
+        return;
+    }
+
+    // Validate investigation exists
+    var investGr = new GlideRecord('x_1945330_retail_0_investigation');
+    if (!investGr.get(investigation)) {
+        gs.error('[Retail Store Assistant] Validate AI Analysis: rejected — investigation ' + investigation + ' does not exist');
+        gs.addErrorMessage('AI Analysis rejected: the referenced Investigation does not exist.');
+        current.setAbortAction(true);
+        return;
+    }
+    gs.debug('[Retail Store Assistant] Validate AI Analysis: investigation reference validated — ' + investigation);
+
+    // Set default status
+    if (!current.getValue('status')) {
+        current.setValue('status', 'requested');
+    }
+
+    // Set requested_on if not already set
+    if (!current.getValue('requested_on')) {
+        var now = new GlideDateTime();
+        current.setValue('requested_on', now.getDisplayValue());
+        gs.debug('[Retail Store Assistant] Validate AI Analysis: auto-set requested_on');
+    }
+
+    gs.info('[Retail Store Assistant] Validate AI Analysis: validation passed — analysis_number=' + current.getValue('analysis_number') + ' investigation=' + investigation + ' type=' + current.getValue('analysis_type') + ' requested_by=' + current.getValue('requested_by'));
+})();
+]]></script>
+    <sys_name>Validate AI Analysis</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

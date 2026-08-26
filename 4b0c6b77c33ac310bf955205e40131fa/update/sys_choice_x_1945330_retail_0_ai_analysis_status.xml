@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="status" table="x_1945330_retail_0_ai_analysis" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>058e5357dc4248f1ae894c37181338bb</sys_id>
+      <element>status</element>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_package display_value="x_1945330_retail_0" source="4b0c6b77c33ac310bf955205e40131fa">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+      <sys_update_name>sys_choice_x_1945330_retail_0_ai_analysis_status</sys_update_name>
+      <sys_name>status</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>77e78272f6f646959d77fb881a56f054</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>status</element>
+      <label>Requested</label>
+      <value>requested</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>007d57a705b44a8ab660f80faa479a65</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>status</element>
+      <label>Running</label>
+      <value>running</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>552bca95ebf24380afd45a6f71192449</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>status</element>
+      <label>Completed</label>
+      <value>completed</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c9edc0dbeb9a4375b5b1f3c75f78a23e</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>status</element>
+      <label>Failed</label>
+      <value>failed</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>a4d7ba5ade9e4d1abf9073664e57c7bd</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_a4d7ba5ade9e4d1abf9073664e57c7bd</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_ai_analysis</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>AI Analysis Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function aiAnalysisLifecycle() {
+    // Only process status changes for lifecycle logic
+    if (!current.status.changes()) {
+        // Handle human disposition changes separately
+        if (current.human_disposition.changes()) {
+            var disposition = current.getValue('human_disposition');
+            var analysisNum = current.getValue('analysis_number');
+
+            // Validate only completed analyses can receive disposition
+            var currentStatus = current.getValue('status');
+            if (currentStatus !== 'completed') {
+                gs.warn('[Retail Store Assistant] AI Analysis Lifecycle: disposition attempt on non-completed analysis ' + analysisNum + ' (status=' + currentStatus + ')');
+                gs.addErrorMessage('AI Analysis: human disposition can only be set on completed analyses.');
+                current.setAbortAction(true);
+                return;
+            }
+
+            // Auto-set disposition_by and disposition_on
+            if (disposition && disposition !== 'not_reviewed') {
+                if (!current.getValue('disposition_by')) {
+                    current.setValue('disposition_by', gs.getUserID());
+                }
+                if (!current.getValue('disposition_on')) {
+                    var dispNow = new GlideDateTime();
+                    current.setValue('disposition_on', dispNow.getDisplayValue());
+                }
+            }
+            gs.info('[Retail Store Assistant] AI Analysis Lifecycle: human disposition set to "' + disposition + '" for analysis ' + analysisNum + ' by ' + current.getValue('disposition_by'));
+            return;
+        }
+
+        gs.debug('[Retail Store Assistant] AI Analysis Lifecycle: non-status update for ' + current.getValue('analysis_number'));
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var analysisNumber = current.getValue('analysis_number');
+
+    gs.info('[Retail Store Assistant] AI Analysis Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for analysis ' + analysisNumber);
+
+    // Define valid transitions (V2.8: Requested → Running → Completed/Failed)
+    var validTransitions = {
+        'requested': ['running'],
+        'running': ['completed', 'failed'],
+        'completed': [],
+        'failed': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] AI Analysis Lifecycle: REJECTED invalid transition "' + oldStatus + '" → "' + newStatus + '" for analysis ' + analysisNumber);
+        gs.addErrorMessage('AI Analysis lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+
+    // Handle transition to Running
+    if (newStatus === 'running') {
+        gs.info('[Retail Store Assistant] AI Analysis Lifecycle: analysis ' + analysisNumber + ' moved to Running');
+    }
+
+    // Handle transition to Completed: auto-set completed_on
+    if (newStatus === 'completed') {
+        if (!current.getValue('completed_on')) {
+            current.setValue('completed_on', now.getDisplayValue());
+        }
+        // Set default human_disposition to not_reviewed
+        if (!current.getValue('human_disposition')) {
+            current.setValue('human_disposition', 'not_reviewed');
+        }
+        gs.info('[Retail Store Assistant] AI Analysis Lifecycle: analysis ' + analysisNumber + ' completed — completed_on=' + current.getValue('completed_on'));
+    }
+
+    // Handle transition to Failed: require failure_reason
+    if (newStatus === 'failed') {
+        if (!current.getValue('failure_reason')) {
+            current.setValue('failure_reason', 'AI processing failed — see system logs for details.');
+        }
+        gs.error('[Retail Store Assistant] AI Analysis Lifecycle: analysis ' + analysisNumber + ' FAILED — reason: ' + current.getValue('failure_reason'));
+    }
+
+    // CRITICAL: AI Analysis MUST NOT modify any authoritative records
+    // No inventory modifications, no investigation state changes, no adjustment approvals
+    gs.info('[Retail Store Assistant] AI Analysis Lifecycle: analysis ' + analysisNumber + ' successfully transitioned to "' + newStatus + '"');
+})();
+]]></script>
+    <sys_name>AI Analysis Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>

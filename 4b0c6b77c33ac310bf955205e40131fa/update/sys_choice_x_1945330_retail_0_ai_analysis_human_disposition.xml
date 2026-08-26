@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="human_disposition" table="x_1945330_retail_0_ai_analysis" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>0d923c288342412ca3069499ecdcf047</sys_id>
+      <element>human_disposition</element>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_package display_value="x_1945330_retail_0" source="4b0c6b77c33ac310bf955205e40131fa">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+      <sys_update_name>sys_choice_x_1945330_retail_0_ai_analysis_human_disposition</sys_update_name>
+      <sys_name>human_disposition</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>4eb28fd22e30499bb3c4b186878b7b85</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>human_disposition</element>
+      <label>Accepted</label>
+      <value>accepted</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>67a1c6b46cf442df8c89ebe7e89314b5</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>human_disposition</element>
+      <label>Rejected</label>
+      <value>rejected</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>340ebf1eeb4442fe9786c2779bc4a504</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>human_disposition</element>
+      <label>Modified</label>
+      <value>modified</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>78212c503f934edc988fc59c86089c33</sys_id>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <element>human_disposition</element>
+      <label>Not Reviewed</label>
+      <value>not_reviewed</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>

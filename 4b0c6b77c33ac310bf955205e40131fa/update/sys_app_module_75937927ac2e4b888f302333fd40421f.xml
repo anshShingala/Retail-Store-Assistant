@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>75937927ac2e4b888f302333fd40421f</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_app_module_75937927ac2e4b888f302333fd40421f</sys_update_name>
+    <active>true</active>
+    <application>5975a1097fcb4d49818d487eee791737</application>
+    <hint>View AI-generated analysis artifacts for investigations</hint>
+    <link_type>LIST</link_type>
+    <name>x_1945330_retail_0_ai_analysis</name>
+    <order>1400</order>
+    <title>AI Analyses</title>
+  </sys_app_module>
+</record_update>
