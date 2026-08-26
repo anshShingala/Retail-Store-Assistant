@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_choice_set action="INSERT_OR_UPDATE" field="category" table="x_1945330_retail_0_product" version="3">
+    <sys_choice_set action="INSERT_OR_UPDATE">
+      <sys_id>eb2b36041afa44579f00247c578550b4</sys_id>
+      <element>category</element>
+      <name>x_1945330_retail_0_product</name>
+      <sys_class_name>sys_choice_set</sys_class_name>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_package display_value="x_1945330_retail_0" source="4b0c6b77c33ac310bf955205e40131fa">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+      <sys_update_name>sys_choice_x_1945330_retail_0_product_category</sys_update_name>
+      <sys_name>category</sys_name>
+    </sys_choice_set>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>17d014943d144bba8fe99d489955316e</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Electronics</label>
+      <value>electronics</value>
+      <sequence>1</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>78d795848fb44a38a0895120b1e5ba17</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Clothing</label>
+      <value>clothing</value>
+      <sequence>2</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>d469ca4873ee4de591e68706dbd0f055</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Food &amp; Beverage</label>
+      <value>food_beverage</value>
+      <sequence>3</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>e31e229aa24f4732abf8753d3439daa4</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Home &amp; Garden</label>
+      <value>home_garden</value>
+      <sequence>4</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>dbe202be627b4b20aee7f6714ad34cfb</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Health &amp; Beauty</label>
+      <value>health_beauty</value>
+      <sequence>5</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>b4d8327341a24979afb3061027bf6125</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Toys &amp; Games</label>
+      <value>toys_games</value>
+      <sequence>6</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>f86560e3a4d04311ba95b8ab044de0c5</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Sports &amp; Outdoors</label>
+      <value>sports_outdoors</value>
+      <sequence>7</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>9876f2c93f00497fb46879e5f7803915</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Automotive</label>
+      <value>automotive</value>
+      <sequence>8</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>4dfe3e1d985f4ddbba1d413ca3a4f384</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Office Supplies</label>
+      <value>office_supplies</value>
+      <sequence>9</sequence>
+      <language>en</language>
+    </sys_choice>
+    <sys_choice action="INSERT_OR_UPDATE">
+      <sys_id>c1a4e60a1f554569892f944bf60e6542</sys_id>
+      <name>x_1945330_retail_0_product</name>
+      <element>category</element>
+      <label>Other</label>
+      <value>other</value>
+      <sequence>10</sequence>
+      <language>en</language>
+    </sys_choice>
+  </sys_choice_set>
+</record_update>
