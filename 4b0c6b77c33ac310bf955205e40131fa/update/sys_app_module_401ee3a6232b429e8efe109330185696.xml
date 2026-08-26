@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_app_module">
+  <sys_app_module action="INSERT_OR_UPDATE">
+    <sys_id>401ee3a6232b429e8efe109330185696</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_app_module_401ee3a6232b429e8efe109330185696</sys_update_name>
+    <active>true</active>
+    <application>5975a1097fcb4d49818d487eee791737</application>
+    <hint>View and manage inventory discrepancy investigations</hint>
+    <link_type>LIST</link_type>
+    <name>x_1945330_retail_0_investigation</name>
+    <order>1100</order>
+    <title>Investigations</title>
+  </sys_app_module>
+</record_update>

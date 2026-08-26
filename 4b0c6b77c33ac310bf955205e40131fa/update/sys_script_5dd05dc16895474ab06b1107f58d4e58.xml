@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script">
+  <sys_script action="INSERT_OR_UPDATE">
+    <sys_id>5dd05dc16895474ab06b1107f58d4e58</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_script_5dd05dc16895474ab06b1107f58d4e58</sys_update_name>
+    <abort_action>false</abort_action>
+    <access>package_private</access>
+    <action_delete>false</action_delete>
+    <action_insert>false</action_insert>
+    <action_query>false</action_query>
+    <action_update>true</action_update>
+    <active>true</active>
+    <add_message>false</add_message>
+    <advanced>true</advanced>
+    <change_fields>false</change_fields>
+    <client_callable>false</client_callable>
+    <collection>x_1945330_retail_0_investigation</collection>
+    <condition/>
+    <description/>
+    <execute_function>false</execute_function>
+    <filter_condition/>
+    <is_rest>false</is_rest>
+    <message/>
+    <name>Investigation Lifecycle Manager</name>
+    <order>100</order>
+    <priority>100</priority>
+    <rest_method/>
+    <rest_method_text/>
+    <rest_service/>
+    <rest_service_text/>
+    <rest_variables/>
+    <role_conditions/>
+    <script><![CDATA[(function investigationLifecycle() {
+    // Only process status changes for lifecycle logic
+    if (!current.status.changes()) {
+        gs.debug('[Retail Store Assistant] Investigation Lifecycle: no status change for investigation ' + current.getValue('investigation_number'));
+        return;
+    }
+
+    var oldStatus = previous.getValue('status');
+    var newStatus = current.getValue('status');
+    var investNumber = current.getValue('investigation_number');
+
+    gs.info('[Retail Store Assistant] Investigation Lifecycle: processing transition "' + oldStatus + '" → "' + newStatus + '" for investigation ' + investNumber);
+
+    // Define valid transitions (V2.8: Open → In Progress → Resolved → Closed)
+    var validTransitions = {
+        'open': ['in_progress'],
+        'in_progress': ['resolved'],
+        'resolved': ['closed'],
+        'closed': []
+    };
+
+    var allowed = validTransitions[oldStatus] || [];
+    var isValid = false;
+    for (var i = 0; i < allowed.length; i++) {
+        if (allowed[i] === newStatus) {
+            isValid = true;
+            break;
+        }
+    }
+
+    if (!isValid) {
+        gs.error('[Retail Store Assistant] Investigation Lifecycle: REJECTED invalid transition "' + oldStatus + '" → "' + newStatus + '" for investigation ' + investNumber);
+        gs.addErrorMessage('Investigation lifecycle violation: cannot transition from "' + oldStatus + '" to "' + newStatus + '".');
+        current.setAbortAction(true);
+        return;
+    }
+
+    var now = new GlideDateTime();
+
+    // Handle transition to In Progress
+    if (newStatus === 'in_progress') {
+        gs.info('[Retail Store Assistant] Investigation Lifecycle: investigation ' + investNumber + ' moved to In Progress');
+    }
+
+    // Handle transition to Resolved: validate resolution is provided
+    if (newStatus === 'resolved') {
+        var resolution = current.getValue('resolution');
+        if (!resolution) {
+            gs.error('[Retail Store Assistant] Investigation Lifecycle: cannot resolve investigation ' + investNumber + ' — resolution field is required');
+            gs.addErrorMessage('Investigation cannot be resolved: a resolution decision (No Adjustment or Adjustment Required) must be recorded.');
+            current.setAbortAction(true);
+            return;
+        }
+        gs.info('[Retail Store Assistant] Investigation Lifecycle: investigation ' + investNumber + ' resolved with resolution="' + resolution + '"');
+    }
+
+    // Handle transition to Closed: validate closed_by and closed_on
+    if (newStatus === 'closed') {
+        // Set closed_on if not already provided
+        if (!current.getValue('closed_on')) {
+            current.setValue('closed_on', now.getDisplayValue());
+        }
+
+        // Set closed_by to current user if not already provided
+        if (!current.getValue('closed_by')) {
+            current.setValue('closed_by', gs.getUserID());
+        }
+
+        // Validate resolution exists (must have been resolved first)
+        var resolution = current.getValue('resolution');
+        if (!resolution) {
+            gs.error('[Retail Store Assistant] Investigation Lifecycle: cannot close investigation ' + investNumber + ' — resolution is missing (must be resolved before closing)');
+            gs.addErrorMessage('Investigation cannot be closed: resolution must be recorded before closure.');
+            current.setAbortAction(true);
+            return;
+        }
+
+        gs.info('[Retail Store Assistant] Investigation Lifecycle: investigation ' + investNumber + ' closed by ' + current.getValue('closed_by') + ' at ' + current.getValue('closed_on'));
+    }
+
+    // CRITICAL: Do NOT modify Inventory Position
+    // CRITICAL: Do NOT create Inventory Transactions
+    // CRITICAL: Do NOT bypass Adjustment Request
+    // The correction path is: Investigation → Adjustment Request → Approval → Posted Transaction
+
+    gs.info('[Retail Store Assistant] Investigation Lifecycle: investigation ' + investNumber + ' successfully transitioned to "' + newStatus + '"');
+})();
+]]></script>
+    <sys_name>Investigation Lifecycle Manager</sys_name>
+    <sys_policy/>
+    <template/>
+    <when>before</when>
+  </sys_script>
+</record_update>
