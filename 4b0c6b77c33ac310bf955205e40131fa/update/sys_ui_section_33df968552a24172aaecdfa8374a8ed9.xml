@@ -14,6 +14,20 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>cancelled_on</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 06:36:07</sys_created_on>
+            <sys_id>004d33f9b4f447f799645723b3080393</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Cancellation" display_value="Cancellation" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">33df968552a24172aaecdfa8374a8ed9</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 06:36:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption>Cancellation</caption>
             <header>false</header>
