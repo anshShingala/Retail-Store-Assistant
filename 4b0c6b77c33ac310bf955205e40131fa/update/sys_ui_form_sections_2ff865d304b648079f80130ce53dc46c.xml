@@ -14,6 +14,20 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 05:59:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dc8b3240c307831054453fac050131f2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_store" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">2ff865d304b648079f80130ce53dc46c</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">72233737c37ac310bf955205e401310b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 05:59:52</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1945330_retail_0_store</name>
             <roles/>

@@ -1,40 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element db_object_id="c53f0ffaaffb4ae7b628417e299717ab" label="Transfer" name="x_1945330_retail_0_transfer" type="collection">
-        <element label="Destination Store" mandatory="true" max_length="32" name="destination_store" reference="x_1945330_retail_0_store" type="reference"/>
-        <element label="Shipped On" max_length="40" name="shipped_on" type="glide_date_time"/>
-        <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
-        <element label="Source Store" mandatory="true" max_length="32" name="source_store" reference="x_1945330_retail_0_store" type="reference"/>
-        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
-        <element label="Requested By" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
-        <element label="Approved On" max_length="40" name="approved_on" type="glide_date_time"/>
-        <element label="Received On" max_length="40" name="received_on" type="glide_date_time"/>
-        <element label="Cancellation Reason" max_length="4000" name="cancellation_reason" type="multi_two_lines"/>
         <element choice="3" default="requested" label="Status" mandatory="true" max_length="40" name="status" type="choice">
             <choice>
-                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
                 <element inactive_on_update="false" label="Shipped" sequence="3" value="shipped"/>
                 <element inactive_on_update="false" label="Cancelled" sequence="5" value="cancelled"/>
-                <element inactive_on_update="false" label="Requested" sequence="1" value="requested"/>
                 <element inactive_on_update="false" label="Received" sequence="4" value="received"/>
+                <element inactive_on_update="false" label="Approved" sequence="2" value="approved"/>
+                <element inactive_on_update="false" label="Requested" sequence="1" value="requested"/>
             </choice>
         </element>
-        <element display="true" label="Transfer Number" mandatory="true" max_length="40" name="transfer_number" type="string" unique="true"/>
+        <element label="Shipped On" max_length="40" name="shipped_on" type="glide_date_time"/>
+        <element label="Requested By" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element label="Approved On" max_length="40" name="approved_on" type="glide_date_time"/>
         <element label="Idempotency Key" mandatory="true" max_length="200" name="idempotency_key" type="string" unique="true"/>
+        <element display="true" label="Transfer Number" mandatory="true" max_length="40" name="transfer_number" type="string" unique="true"/>
+        <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
+        <element label="Source Store" mandatory="true" max_length="32" name="source_store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Received On" max_length="40" name="received_on" type="glide_date_time"/>
         <element label="Requested On" max_length="40" name="requested_on" type="glide_date_time"/>
+        <element label="Destination Store" mandatory="true" max_length="32" name="destination_store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element label="Cancellation Reason" max_length="4000" name="cancellation_reason" type="multi_two_lines"/>
         <index name="index">
             <element name="destination_store"/>
         </index>
-        <index name="index2" unique="true">
+        <index name="index2">
             <element name="idempotency_key"/>
         </index>
-        <index name="index3">
-            <element name="requested_by"/>
+        <index name="index3" unique="true">
+            <element name="idempotency_key"/>
         </index>
         <index name="index4">
-            <element name="sku"/>
+            <element name="requested_by"/>
         </index>
         <index name="index5">
+            <element name="sku"/>
+        </index>
+        <index name="index6">
             <element name="source_store"/>
+        </index>
+        <index name="index7" unique="true">
+            <element name="transfer_number"/>
         </index>
     </element>
 </database>

@@ -84,6 +84,20 @@
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
         </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 05:59:52</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>dc8b7240c307831054453fac0501311c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">79625484c34fc310bf955205e4013155</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 05:59:52</sys_updated_on>
+        </sys_ui_form_section>
         <sys_ui_form action="INSERT_OR_UPDATE">
             <name>x_1945330_retail_0_adj_req</name>
             <roles/>
