@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_test">
+    <sys_atf_test action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <copied_from/>
+        <description>Establishes an inventory position with on_hand=5 via an inbound transaction, then attempts to insert an outbound transaction with quantity=100 that would result in negative on-hand. Asserts the outbound transaction is rejected by the Prevent Negative On-Hand business rule.</description>
+        <enable_parameterized_testing>false</enable_parameterized_testing>
+        <fail_on_server_error>true</fail_on_server_error>
+        <name>UAT-INV-002: Prevent Negative On-Hand</name>
+        <parameters/>
+        <remember/>
+        <sn_atf_tg_generated>false</sn_atf_tg_generated>
+        <sys_class_name>sys_atf_test</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 06:59:38</sys_created_on>
+        <sys_id>22a12505697f4c259c784ca17277019c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>UAT-INV-002: Prevent Negative On-Hand</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_atf_test_22a12505697f4c259c784ca17277019c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 06:59:38</sys_updated_on>
+        <test_origin/>
+    </sys_atf_test>
+    <sys_variable_value action="delete_multiple" query="document_key=22a12505697f4c259c784ca17277019c"/>
+</record_update>

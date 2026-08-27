@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description/>
+        <display_name>Record Insert</display_name>
+        <inputs/>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>4</order>
+        <step_config display_value="Record Insert">14872288df60220062fe6c7a4df26319</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 06:59:25</sys_created_on>
+        <sys_id>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record Insert</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_atf_step_4a0f01c0dc5d40fe9c5d7ebf77d78fa6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 06:59:25</sys_updated_on>
+        <table>x_1945330_retail_0_inv_txn</table>
+        <test display_value="UAT-SEC-003: Transaction Immutability - Prevent Modification">9d1b2ea1c0974b5e99e1e5cf22567b0f</test>
+        <timeout/>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=4a0f01c0dc5d40fe9c5d7ebf77d78fa6"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:15</sys_created_on>
+        <sys_id>078951af835f41fead5fd33fb140325c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:15</sys_updated_on>
+        <value>store={{step['512cf87f279c4f25bd122284a2f61c87'].record_id}}^sku={{step['5b78c0a9923c44c5869c469ebb3e9185'].record_id}}^movement_direction=in^quantity=10^transaction_type=receipt^idempotency_key=UAT-SEC-003-TXN-001^EQ</value>
+        <variable display_value="Field values">dd54cf535320220002c6435723dc34fd</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:15</sys_created_on>
+        <sys_id>2c59a279a2374ea2aba27780c244b7ce</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:15</sys_updated_on>
+        <value>record_successfully_inserted</value>
+        <variable display_value="Assert type">9024a37f671003007ba405225685efe5</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:15</sys_created_on>
+        <sys_id>d07f132655204f1d8255513cc8d457e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:15</sys_updated_on>
+        <value>x_1945330_retail_0_inv_txn</value>
+        <variable display_value="Table">90144b535320220002c6435723dc3488</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:15</sys_created_on>
+        <sys_id>f54f82a204ff480193cb54bf46b6aed7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:15</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Enforce security">e6e3c7535320220002c6435723dc3496</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=4a0f01c0dc5d40fe9c5d7ebf77d78fa6"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>field_values</field>
+        <id>4a0f01c0dc5d40fe9c5d7ebf77d78fa6</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:15</sys_created_on>
+        <sys_id>8513f464972748ec8cee71b3aa49ed5a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:15</sys_updated_on>
+        <table>var__m_atf_input_variable_14872288df60220062fe6c7a4df26319</table>
+        <value>store={{step['512cf87f279c4f25bd122284a2f61c87'].record_id}}^sku={{step['5b78c0a9923c44c5869c469ebb3e9185'].record_id}}^movement_direction=in^quantity=10^transaction_type=receipt^idempotency_key=UAT-SEC-003-TXN-001^EQ</value>
+    </sys_element_mapping>
+</record_update>

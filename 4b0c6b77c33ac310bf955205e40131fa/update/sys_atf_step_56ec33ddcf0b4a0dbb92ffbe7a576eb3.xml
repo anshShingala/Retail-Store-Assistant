@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_atf_step">
+    <sys_atf_step action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <callable_outputs/>
+        <copied_from/>
+        <description/>
+        <display_name>Record Query</display_name>
+        <inputs/>
+        <inputs/>
+        <mugshots_cache_json/>
+        <notes/>
+        <order>11</order>
+        <step_config display_value="Record Query">2d82e3c7531400109e02ddeeff7b12a7</step_config>
+        <sys_class_name>sys_atf_step</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 06:59:26</sys_created_on>
+        <sys_id>56ec33ddcf0b4a0dbb92ffbe7a576eb3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Record Query</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_atf_step_56ec33ddcf0b4a0dbb92ffbe7a576eb3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 06:59:26</sys_updated_on>
+        <table>x_1945330_retail_0_inv_txn</table>
+        <test display_value="UAT-TRF-001: Transfer Full Lifecycle">7d5b791dde4a4ced81a85405136c07e2</test>
+        <timeout>1970-01-01 00:00:05</timeout>
+        <warning_message/>
+    </sys_atf_step>
+    <sys_variable_value action="delete_multiple" query="document_key=56ec33ddcf0b4a0dbb92ffbe7a576eb3"/>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>56ec33ddcf0b4a0dbb92ffbe7a576eb3</document_key>
+        <order>100</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:16</sys_created_on>
+        <sys_id>1fd991c2d2ec453193ad3fecea1038ef</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:16</sys_updated_on>
+        <value>0</value>
+        <variable display_value="Enforce security">02fb0027531000109e02ddeeff7b120b</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>56ec33ddcf0b4a0dbb92ffbe7a576eb3</document_key>
+        <order>300</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:16</sys_created_on>
+        <sys_id>22e297e12bad42d09d147c4bc5044773</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:16</sys_updated_on>
+        <value>x_1945330_retail_0_inv_txn</value>
+        <variable display_value="Table">78b8d86b531000109e02ddeeff7b12f3</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>56ec33ddcf0b4a0dbb92ffbe7a576eb3</document_key>
+        <order>200</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:16</sys_created_on>
+        <sys_id>a0a5924272fc4635b2d76a8141dd8708</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:16</sys_updated_on>
+        <value>records_match_query</value>
+        <variable display_value="Assert type">b86c0427531000109e02ddeeff7b1227</variable>
+    </sys_variable_value>
+    <sys_variable_value action="INSERT_OR_UPDATE">
+        <document>sys_atf_step</document>
+        <document_key>56ec33ddcf0b4a0dbb92ffbe7a576eb3</document_key>
+        <order>400</order>
+        <sys_class_name>sys_variable_value</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:16</sys_created_on>
+        <sys_id>c33bb8ca7c1d4138b88fa176ade73096</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:16</sys_updated_on>
+        <value>store={{step['f819883d27d04bf7904d994b6db21ed1'].record_id}}^sku={{step['f95ab8260c3a42b88d9cc79d173d0afb'].record_id}}^movement_direction=in^transfer={{step['0d9db08b3631464484f38cd54c2fbcff'].record_id}}</value>
+        <variable display_value="Conditions">915990ab531000109e02ddeeff7b12f8</variable>
+    </sys_variable_value>
+    <sys_element_mapping action="delete_multiple" query="id=56ec33ddcf0b4a0dbb92ffbe7a576eb3"/>
+    <sys_element_mapping action="INSERT_OR_UPDATE">
+        <field>field_values</field>
+        <id>56ec33ddcf0b4a0dbb92ffbe7a576eb3</id>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 11:23:16</sys_created_on>
+        <sys_id>f50868ac4c634d13b0e2f743579d0439</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 11:23:16</sys_updated_on>
+        <table>var__m_atf_input_variable_2d82e3c7531400109e02ddeeff7b12a7</table>
+        <value>store={{step['f819883d27d04bf7904d994b6db21ed1'].record_id}}^sku={{step['f95ab8260c3a42b88d9cc79d173d0afb'].record_id}}^movement_direction=in^transfer={{step['0d9db08b3631464484f38cd54c2fbcff'].record_id}}</value>
+    </sys_element_mapping>
+</record_update>
