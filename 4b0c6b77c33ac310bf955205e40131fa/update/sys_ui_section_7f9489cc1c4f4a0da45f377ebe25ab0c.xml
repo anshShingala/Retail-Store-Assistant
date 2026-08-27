@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Activation" section_id="7f9489cc1c4f4a0da45f377ebe25ab0c" sys_domain="global" table="x_1945330_retail_0_bus_policy" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>61fdf5856fa84fdd9e788a42810cdabf</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>active</element>
+      <position>1</position>
+      <sys_id>045c771e9537462bada72fd3cea755f1</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>retired_on</element>
+      <position>2</position>
+      <sys_id>077c9c28810b4ba1960ce733af6c4c2e</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>656f1e5a215c429f9cbf9110a8aa88dd</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>activated_on</element>
+      <position>4</position>
+      <sys_id>2dfee9f92fc544a5bb4d2fb250d7d44d</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>5</position>
+      <sys_id>0df12131716548dfa0867ade805bd3f0</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Activation</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_bus_policy</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>7f9489cc1c4f4a0da45f377ebe25ab0c</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

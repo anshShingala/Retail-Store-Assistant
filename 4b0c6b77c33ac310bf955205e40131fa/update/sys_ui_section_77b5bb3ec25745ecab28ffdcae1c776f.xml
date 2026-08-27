@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Physical Observation" section_id="77b5bb3ec25745ecab28ffdcae1c776f" sys_domain="global" table="x_1945330_retail_0_phys_count" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>7bde652f0a244231ae75c21f95bf1d83</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>counted_quantity</element>
+      <position>1</position>
+      <sys_id>ab62c107ccb24b769a70d22ec09be173</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>counted_on</element>
+      <position>2</position>
+      <sys_id>952545b36cdb45d788a6daca27bebfe3</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>40ca2bd98fa540c9a37865ce848f9612</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>counted_by</element>
+      <position>4</position>
+      <sys_id>bf2f1a8e464c40cfa8949d5338b58af8</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>5</position>
+      <sys_id>20e3f6a831cc4724b8de0613a493687d</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Physical Observation</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_phys_count</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>77b5bb3ec25745ecab28ffdcae1c776f</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

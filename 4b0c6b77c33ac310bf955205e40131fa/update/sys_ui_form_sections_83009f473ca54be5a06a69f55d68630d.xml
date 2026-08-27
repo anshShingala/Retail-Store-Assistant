@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_form_sections form_id="83009f473ca54be5a06a69f55d68630d" sys_domain="global" table="x_1945330_retail_0_adj_req">
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>0</position>
+      <sys_id>6d0feeca299f44b884227186d3b5a3df</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>1</position>
+      <sys_id>4bd9f7daec254c23bc0aa0ab9ebe4e64</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>2</position>
+      <sys_id>d8cd5f542e004851b9f95b40a86663b8</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Requester" display_value="Requester" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">162bf1b6b30c434aa373e55d3d192691</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>3</position>
+      <sys_id>ad84666d9d3143a0849e3be22ed31b32</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>4</position>
+      <sys_id>9a273c6e9f264cf09ad873533c6562bd</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Posting" display_value="Posting" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">2ebf92ff3db64cfba9308815a153238c</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>5</position>
+      <sys_id>ecaae281ad534af3b92d57d996c7cbc8</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_adj_req" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">83009f473ca54be5a06a69f55d68630d</sys_ui_form>
+      <sys_ui_section caption="Failure" display_value="Failure" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">8535db7939384cb48c40cceed6c18d33</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE">
+      <name>x_1945330_retail_0_adj_req</name>
+      <roles/>
+      <sys_id>83009f473ca54be5a06a69f55d68630d</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <view display_value="Default view" name="NULL">Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

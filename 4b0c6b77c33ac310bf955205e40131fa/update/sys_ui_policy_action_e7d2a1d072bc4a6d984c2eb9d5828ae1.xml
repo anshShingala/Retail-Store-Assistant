@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_ui_policy_action_e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>ignore</disabled>
+    <field>failure_reason</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_1945330_retail_0_ai_analysis</table>
+    <ui_policy short_description="Show failure reason when failed" table="x_1945330_retail_0_ai_analysis">c122200af8ed490ba4784f82b3aaf56e</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>true</visible>
+  </sys_ui_policy_action>
+</record_update>

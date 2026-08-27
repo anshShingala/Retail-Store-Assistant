@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>409f7eb167324f998cd05d7cc057c613</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_ui_policy_action_409f7eb167324f998cd05d7cc057c613</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>ignore</disabled>
+    <field>approved_on</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_1945330_retail_0_adj_req</table>
+    <ui_policy short_description="Show approval fields when in approval workflow" table="x_1945330_retail_0_adj_req">b9bfe87b01f44629945be6c4df7d42de</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>true</visible>
+  </sys_ui_policy_action>
+</record_update>

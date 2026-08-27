@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_list table="x_1945330_retail_0_investigation">
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>fbae651ff66941c198fef5c5421e139c</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>investigation_number</element>
+      <position>0</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>716a439916ad4436b7a041895101e74e</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>discrepancy</element>
+      <position>1</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>2291a378e6e34a4f93f9b4789008d3e5</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>store</element>
+      <position>2</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>ccc28f0673a84f23b7e1868d8b56e6d3</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>sku</element>
+      <position>3</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>0b4d04310bf54c9fac9d3f5059683700</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>status</element>
+      <position>4</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>89fab12f1a4546558bf1b7ccdf0a522e</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>priority</element>
+      <position>5</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>c3c174f13a3b47089b398535a0da1292</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>assigned_to</element>
+      <position>6</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>bf9b103787b94c1f93c50e4110af92cf</sys_id>
+      <list_id display_value="x_1945330_retail_0_investigation" element="NULL" name="x_1945330_retail_0_investigation" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">b4d1ba2fe7f947bd8f53c37450c3d76e</list_id>
+      <element>due_on</element>
+      <position>7</position>
+    </sys_ui_list_element>
+    <sys_ui_list action="INSERT_OR_UPDATE">
+      <sys_id>b4d1ba2fe7f947bd8f53c37450c3d76e</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <view name="NULL">Default view</view>
+      <name>x_1945330_retail_0_investigation</name>
+    </sys_ui_list>
+  </sys_ui_list>
+</record_update>

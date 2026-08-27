@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Human Disposition" section_id="71be2110b2b848daa3166e5493da47b6" sys_domain="global" table="x_1945330_retail_0_ai_analysis" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>6715694429e648fc8ec50f3ce0f10515</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>human_disposition</element>
+      <position>1</position>
+      <sys_id>19e225273dd1496fa8b8c9fd05c18dcc</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>disposition_on</element>
+      <position>2</position>
+      <sys_id>05fcd335601041eba548eb31aa3505a5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>e9f4f57551f84f0da6e1ca066326d5bb</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>disposition_by</element>
+      <position>4</position>
+      <sys_id>1a19290d4ff54221895f096c7a15ad8e</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>5</position>
+      <sys_id>b54c38de9e4b4f8aa9818e4eb16ace18</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Human Disposition</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>71be2110b2b848daa3166e5493da47b6</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Effective Dating" section_id="3c8cce8461f241a996e903bc43649374" sys_domain="global" table="x_1945330_retail_0_bus_policy" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>e20df82cbf7e4378aa05433cd2035cfe</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>effective_from</element>
+      <position>1</position>
+      <sys_id>77bc7af33a904da7942c156fc16b2822</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>2</position>
+      <sys_id>2eba5dd0d82d4978ab376f7b5ce8cdfc</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>effective_to</element>
+      <position>3</position>
+      <sys_id>9caa73329f914253b92395c21f8560de</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>4</position>
+      <sys_id>05433b54d47f4da2971fbe35f5f337c0</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Effective Dating</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_bus_policy</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>3c8cce8461f241a996e903bc43649374</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

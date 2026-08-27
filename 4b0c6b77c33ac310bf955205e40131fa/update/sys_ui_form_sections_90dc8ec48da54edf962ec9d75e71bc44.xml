@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_form_sections form_id="90dc8ec48da54edf962ec9d75e71bc44" sys_domain="global" table="x_1945330_retail_0_phys_count">
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>0</position>
+      <sys_id>847c4cf3fec1409f907a5240f5b2d5e7</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_phys_count" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">90dc8ec48da54edf962ec9d75e71bc44</sys_ui_form>
+      <sys_ui_section caption="Count Identification" display_value="Count Identification" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">66cfd5fae3db40909fad1d3f2c501ac2</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>1</position>
+      <sys_id>0058c254b5884c3a8cc7560f9c744a0d</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_phys_count" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">90dc8ec48da54edf962ec9d75e71bc44</sys_ui_form>
+      <sys_ui_section caption="Physical Observation" display_value="Physical Observation" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">77b5bb3ec25745ecab28ffdcae1c776f</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>2</position>
+      <sys_id>d905bba94b534de6af46ba3a1fb9cc84</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_phys_count" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">90dc8ec48da54edf962ec9d75e71bc44</sys_ui_form>
+      <sys_ui_section caption="System Snapshot" display_value="System Snapshot" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">c5425eec1cce4fb4b60409bf525f6e87</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>3</position>
+      <sys_id>32eb5ae26ef44739a49844997a965450</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_phys_count" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">90dc8ec48da54edf962ec9d75e71bc44</sys_ui_form>
+      <sys_ui_section caption="Recount / Notes" display_value="Recount / Notes" name="x_1945330_retail_0_phys_count" sys_domain="global" view="Default view">c628471990d5499e97a59f2d1b9a2e06</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE">
+      <name>x_1945330_retail_0_phys_count</name>
+      <roles/>
+      <sys_id>90dc8ec48da54edf962ec9d75e71bc44</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <view display_value="Default view" name="NULL">Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

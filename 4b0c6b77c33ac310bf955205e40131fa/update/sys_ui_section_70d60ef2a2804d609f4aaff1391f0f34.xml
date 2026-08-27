@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Policy Identity" section_id="70d60ef2a2804d609f4aaff1391f0f34" sys_domain="global" table="x_1945330_retail_0_bus_policy" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>e53d6a36e195462faa1d935cb15ffd1e</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>policy_number</element>
+      <position>1</position>
+      <sys_id>96d0bd3d9f5c44bf98341f4e9a8910ba</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>policy_type</element>
+      <position>2</position>
+      <sys_id>6283ba456afb422790fa0c9e8c9441d7</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>a10b217f6736440689f064efbbf2a21f</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>name</element>
+      <position>4</position>
+      <sys_id>81082478a2494a57bafa7196c14092dd</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>version</element>
+      <position>5</position>
+      <sys_id>93e6ff49545d44228916c94b1599d2b6</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>6</position>
+      <sys_id>78c0c7b5366e4f188cf5a3b541505190</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Policy Identity</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_bus_policy</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>70d60ef2a2804d609f4aaff1391f0f34</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

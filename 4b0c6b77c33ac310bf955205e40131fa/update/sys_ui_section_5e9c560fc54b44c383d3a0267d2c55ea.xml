@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="References" section_id="5e9c560fc54b44c383d3a0267d2c55ea" sys_domain="global" table="x_1945330_retail_0_reservation" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>5b2428eb66f84ffbad340b3c665c68cd</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="References" display_value="References" name="x_1945330_retail_0_reservation" sys_domain="global" view="Default view">5e9c560fc54b44c383d3a0267d2c55ea</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>pickup_reference</element>
+      <position>1</position>
+      <sys_id>c7672eb23aa743318c8289de9fd513f3</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="References" display_value="References" name="x_1945330_retail_0_reservation" sys_domain="global" view="Default view">5e9c560fc54b44c383d3a0267d2c55ea</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>2</position>
+      <sys_id>7a8eeefbeffc4a39959b475d10c2178b</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="References" display_value="References" name="x_1945330_retail_0_reservation" sys_domain="global" view="Default view">5e9c560fc54b44c383d3a0267d2c55ea</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>idempotency_key</element>
+      <position>3</position>
+      <sys_id>1d80b40880354a569aa594b3a41c91e0</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="References" display_value="References" name="x_1945330_retail_0_reservation" sys_domain="global" view="Default view">5e9c560fc54b44c383d3a0267d2c55ea</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>4</position>
+      <sys_id>02e9feb95385440eb5bb68fa57da3b11</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="References" display_value="References" name="x_1945330_retail_0_reservation" sys_domain="global" view="Default view">5e9c560fc54b44c383d3a0267d2c55ea</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>References</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_reservation</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>5e9c560fc54b44c383d3a0267d2c55ea</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

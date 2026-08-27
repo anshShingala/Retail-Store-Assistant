@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Analysis Details" section_id="b698b275336647919f66d2320cc122e6" sys_domain="global" table="x_1945330_retail_0_ai_analysis" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>696ba0a53d1e4c3b9033721fec90fc7a</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>analysis_number</element>
+      <position>1</position>
+      <sys_id>b0439b1d637047d89932111196ecb930</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>analysis_type</element>
+      <position>2</position>
+      <sys_id>e77182a3963540b4bebaea143fc039e2</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>c3089551e2024cafb8415745f2838e33</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>status</element>
+      <position>4</position>
+      <sys_id>a25792b162aa4504ae403b12d540ab05</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>5</position>
+      <sys_id>d5cabe5eef26475a834e5d89e8a5b503</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Analysis Details</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>b698b275336647919f66d2320cc122e6</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

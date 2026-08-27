@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Authorization" section_id="cd60ce77e88e48c08aba14d8683ff66e" sys_domain="global" table="x_1945330_retail_0_bus_policy" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>authorized_by</element>
+      <position>0</position>
+      <sys_id>a479bf07cdb0496095ee074fe1c35078</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Authorization" display_value="Authorization" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">cd60ce77e88e48c08aba14d8683ff66e</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Authorization</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_bus_policy</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>cd60ce77e88e48c08aba14d8683ff66e</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

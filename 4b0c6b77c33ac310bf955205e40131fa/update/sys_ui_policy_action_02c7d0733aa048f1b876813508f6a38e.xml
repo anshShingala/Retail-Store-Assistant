@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>02c7d0733aa048f1b876813508f6a38e</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_ui_policy_action_02c7d0733aa048f1b876813508f6a38e</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>true</disabled>
+    <field>retired_on</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_1945330_retail_0_bus_policy</table>
+    <ui_policy short_description="Protect system timestamps" table="x_1945330_retail_0_bus_policy">a2d8a29cc6cd4b11b0bba4d59627e8c3</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>ignore</visible>
+  </sys_ui_policy_action>
+</record_update>

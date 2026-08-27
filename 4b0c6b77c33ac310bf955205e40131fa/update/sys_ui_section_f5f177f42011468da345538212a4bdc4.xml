@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Requested Adjustment" section_id="f5f177f42011468da345538212a4bdc4" sys_domain="global" table="x_1945330_retail_0_adj_req" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>c09b0421fe1c435ebd2cca84f7d07cad</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>requested_direction</element>
+      <position>1</position>
+      <sys_id>923808319bf64b6f875940d74d4c0b86</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>2</position>
+      <sys_id>f4e0c8ee5823461998e825bbe346a386</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>requested_quantity</element>
+      <position>3</position>
+      <sys_id>3ab7e22c53f14dbb8ded69027a33a330</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>4</position>
+      <sys_id>31c6c9da0df44585a052ce9a93b255eb</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>reason</element>
+      <position>5</position>
+      <sys_id>810d7b2287ab445f95d54024cde8c175</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Requested Adjustment" display_value="Requested Adjustment" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">f5f177f42011468da345538212a4bdc4</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Requested Adjustment</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_adj_req</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>f5f177f42011468da345538212a4bdc4</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

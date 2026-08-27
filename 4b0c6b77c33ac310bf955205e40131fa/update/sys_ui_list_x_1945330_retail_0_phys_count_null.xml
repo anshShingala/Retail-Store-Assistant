@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_list table="x_1945330_retail_0_phys_count">
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>0d2fd43828724b7797dfc25ceb0fa2f7</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>count_number</element>
+      <position>0</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>023117d2c4c245c48d85996d24cc9dd9</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>store</element>
+      <position>1</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>c07ce5080c4645589d5a77e4007b9d13</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>sku</element>
+      <position>2</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>c2178220b33a42f3a88b6ad803fccc76</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>counted_quantity</element>
+      <position>3</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>dd3bcfa890aa44b2a2d24be2e68207c8</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>system_snapshot_quantity</element>
+      <position>4</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>6df43e8aecc946ae860daf935e846bff</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>status</element>
+      <position>5</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>f66ba77a6df54e789fce3f95fcadbd8f</sys_id>
+      <list_id display_value="x_1945330_retail_0_phys_count" element="NULL" name="x_1945330_retail_0_phys_count" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">244b0324af9f418c955f656ae3ce5d71</list_id>
+      <element>counted_on</element>
+      <position>6</position>
+    </sys_ui_list_element>
+    <sys_ui_list action="INSERT_OR_UPDATE">
+      <sys_id>244b0324af9f418c955f656ae3ce5d71</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <view name="NULL">Default view</view>
+      <name>x_1945330_retail_0_phys_count</name>
+    </sys_ui_list>
+  </sys_ui_list>
+</record_update>

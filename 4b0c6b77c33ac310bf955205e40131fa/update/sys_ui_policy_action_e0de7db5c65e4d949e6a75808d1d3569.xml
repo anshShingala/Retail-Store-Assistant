@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
+  <sys_ui_policy_action action="INSERT_OR_UPDATE">
+    <sys_id>e0de7db5c65e4d949e6a75808d1d3569</sys_id>
+    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+    <sys_update_name>sys_ui_policy_action_e0de7db5c65e4d949e6a75808d1d3569</sys_update_name>
+    <cleared>false</cleared>
+    <disabled>true</disabled>
+    <field>closed_by</field>
+    <field_message/>
+    <field_message_type>none</field_message_type>
+    <mandatory>ignore</mandatory>
+    <table>x_1945330_retail_0_investigation</table>
+    <ui_policy short_description="Show closure fields when closed" table="x_1945330_retail_0_investigation">29b66b57f5be469688639e410585c18e</ui_policy>
+    <value/>
+    <value_action>ignore</value_action>
+    <visible>true</visible>
+  </sys_ui_policy_action>
+</record_update>

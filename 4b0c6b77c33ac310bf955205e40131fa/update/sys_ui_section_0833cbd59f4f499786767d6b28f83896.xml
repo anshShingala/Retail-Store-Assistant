@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="AI Findings" section_id="0833cbd59f4f499786767d6b28f83896" sys_domain="global" table="x_1945330_retail_0_ai_analysis" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>findings</element>
+      <position>0</position>
+      <sys_id>b455c5c36e7641639ad0857528503fa4</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Findings" display_value="AI Findings" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">0833cbd59f4f499786767d6b28f83896</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>evidence_summary</element>
+      <position>1</position>
+      <sys_id>a646d0705ed743ff9a710b1f2d112856</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Findings" display_value="AI Findings" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">0833cbd59f4f499786767d6b28f83896</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>recommendations</element>
+      <position>2</position>
+      <sys_id>512c4d861b174d5caf50074ba10aabd1</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="AI Findings" display_value="AI Findings" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">0833cbd59f4f499786767d6b28f83896</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>AI Findings</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_ai_analysis</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>0833cbd59f4f499786767d6b28f83896</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

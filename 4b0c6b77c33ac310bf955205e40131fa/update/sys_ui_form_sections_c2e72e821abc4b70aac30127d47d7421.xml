@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_form_sections form_id="c2e72e821abc4b70aac30127d47d7421" sys_domain="global" table="x_1945330_retail_0_investigation">
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>0</position>
+      <sys_id>3ba80fd7f368426bb8a659d2dd0269ce</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Investigation Details" display_value="Investigation Details" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">dad676d1096a4694b697c7e4874d81d3</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>1</position>
+      <sys_id>9f4a06ed4c2746c183ef2df6a0af6246</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Discrepancy Context" display_value="Discrepancy Context" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">07dc15d4f14b4c2faeb28846247df85e</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>2</position>
+      <sys_id>ed0df7f6795b4d80bc5dcf58d7d4696f</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Dates" display_value="Dates" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">5bc2c6bf612f41af9728042e6dd45de0</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>3</position>
+      <sys_id>acb3fe5d508c40179dafb1de352d7d15</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Findings" display_value="Findings" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">285c7528496d4395a23b909383023156</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>4</position>
+      <sys_id>65cf80001ff2442588a021e2338a0952</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Resolution" display_value="Resolution" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">5416abfd6c8c44228158548e3a3ee2f6</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>5</position>
+      <sys_id>d27872c4e1844c97912933933069e923</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Related Records" display_value="Related Records" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">8f4d645696bf44b381b3485a5e6cf295</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form_section action="INSERT_OR_UPDATE">
+      <position>6</position>
+      <sys_id>7f064b2bb842474e8c281cd09a6ab96e</sys_id>
+      <sys_ui_form display_value="x_1945330_retail_0_investigation" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">c2e72e821abc4b70aac30127d47d7421</sys_ui_form>
+      <sys_ui_section caption="Closure" display_value="Closure" name="x_1945330_retail_0_investigation" sys_domain="global" view="Default view">b4b657ae3b404b69af042a4117f0df32</sys_ui_section>
+    </sys_ui_form_section>
+    <sys_ui_form action="INSERT_OR_UPDATE">
+      <name>x_1945330_retail_0_investigation</name>
+      <roles/>
+      <sys_id>c2e72e821abc4b70aac30127d47d7421</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <view display_value="Default view" name="NULL">Default view</view>
+      <view_name/>
+    </sys_ui_form>
+  </sys_ui_form_sections>
+</record_update>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Lifecycle Dates" section_id="9f05505d1ac04573a62cc6a6374d0b62" sys_domain="global" table="x_1945330_retail_0_transfer" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>2c367199ff2e47e795295a712591ff0b</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>approved_on</element>
+      <position>1</position>
+      <sys_id>2751e6343c9544858c000baf60e8a0d9</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>received_on</element>
+      <position>2</position>
+      <sys_id>f1362cffb74a49ba9adf7cab1ca25dd5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>3</position>
+      <sys_id>5ae7ca7d52094946a6fae69b2b9dbced</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>shipped_on</element>
+      <position>4</position>
+      <sys_id>6c96b0372b2f49919eaf653740ae9dee</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>5</position>
+      <sys_id>4d34b9290dbc4a25bd82826790dd3f12</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Lifecycle Dates" display_value="Lifecycle Dates" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">9f05505d1ac04573a62cc6a6374d0b62</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Lifecycle Dates</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_transfer</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>9f05505d1ac04573a62cc6a6374d0b62</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

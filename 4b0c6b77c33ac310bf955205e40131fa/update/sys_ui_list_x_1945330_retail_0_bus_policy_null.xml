@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_list table="x_1945330_retail_0_bus_policy">
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>38f839a58ec44198b785eaca47b7649a</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>policy_number</element>
+      <position>0</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>4d63a6e23ae7471e99d395c1696c44ef</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>policy_type</element>
+      <position>1</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>efe4bd5cae5c481c9b1d85440e5aacc7</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>version</element>
+      <position>2</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>73416fb69ec24dd7a7b4f2d9db5dbfcc</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>name</element>
+      <position>3</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>400ae00e76c046929eaf3d17516cd184</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>effective_from</element>
+      <position>4</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>9fad3f16fa004e8ea8717fd91f1d37ed</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>effective_to</element>
+      <position>5</position>
+    </sys_ui_list_element>
+    <sys_ui_list_element action="INSERT_OR_UPDATE">
+      <sys_id>d11cf5a738e4453daa713e21bd112479</sys_id>
+      <list_id display_value="x_1945330_retail_0_bus_policy" element="NULL" name="x_1945330_retail_0_bus_policy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">e4c590cf03174faaa5729eaa3fc9a977</list_id>
+      <element>active</element>
+      <position>6</position>
+    </sys_ui_list_element>
+    <sys_ui_list action="INSERT_OR_UPDATE">
+      <sys_id>e4c590cf03174faaa5729eaa3fc9a977</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <view name="NULL">Default view</view>
+      <name>x_1945330_retail_0_bus_policy</name>
+    </sys_ui_list>
+  </sys_ui_list>
+</record_update>

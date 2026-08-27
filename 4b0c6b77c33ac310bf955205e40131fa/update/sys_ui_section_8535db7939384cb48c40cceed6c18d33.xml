@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Failure" section_id="8535db7939384cb48c40cceed6c18d33" sys_domain="global" table="x_1945330_retail_0_adj_req" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>failure_reason</element>
+      <position>0</position>
+      <sys_id>26fba48124444354941e80da1adf79d9</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Failure" display_value="Failure" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">8535db7939384cb48c40cceed6c18d33</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Failure</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_adj_req</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>8535db7939384cb48c40cceed6c18d33</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>

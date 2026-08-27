@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+  <sys_ui_section caption="Policy / Approval" section_id="4f810231f05a4516830c362eb55ec534" sys_domain="global" table="x_1945330_retail_0_adj_req" view="">
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.begin_split</element>
+      <position>0</position>
+      <sys_id>32379e17b96c49f1b262e8a4bca96302</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type>.begin_split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>policy</element>
+      <position>1</position>
+      <sys_id>75ce40e6916b4e31a5306a6cebbb9fe5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>approver</element>
+      <position>2</position>
+      <sys_id>00a91cad70fa4abab62ec3944debddbc</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>approval_outcome</element>
+      <position>3</position>
+      <sys_id>38f9f787b4c640e7a5acdfe668e29152</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.split</element>
+      <position>4</position>
+      <sys_id>a03cab4d09e54482ba6ea500c9528fb5</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type>.split</type>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>policy_version</element>
+      <position>5</position>
+      <sys_id>9ab0fd3d21754346853c2e5a9c101d78</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>approved_on</element>
+      <position>6</position>
+      <sys_id>93da25868fe74b6fb9f3bb19d1be5556</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type/>
+    </sys_ui_element>
+    <sys_ui_element action="INSERT_OR_UPDATE">
+      <element>.end_split</element>
+      <position>7</position>
+      <sys_id>8fb7d144ca5142b9871331c63ab0e529</sys_id>
+      <sys_ui_formatter/>
+      <sys_ui_section caption="Policy / Approval" display_value="Policy / Approval" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">4f810231f05a4516830c362eb55ec534</sys_ui_section>
+      <sys_user/>
+      <type>.end_split</type>
+    </sys_ui_element>
+    <sys_ui_section action="INSERT_OR_UPDATE">
+      <caption>Policy / Approval</caption>
+      <header>false</header>
+      <name>x_1945330_retail_0_adj_req</name>
+      <roles/>
+      <sys_domain>global</sys_domain>
+      <sys_id>4f810231f05a4516830c362eb55ec534</sys_id>
+      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+      <sys_user/>
+      <title>false</title>
+      <view_name/>
+      <view display_value="Default view" name="NULL">Default view</view>
+    </sys_ui_section>
+  </sys_ui_section>
+</record_update>
