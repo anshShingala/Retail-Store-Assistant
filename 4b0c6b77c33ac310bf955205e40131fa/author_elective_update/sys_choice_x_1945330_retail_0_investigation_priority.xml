@@ -6,6 +6,7 @@
             <sys_class_name>sys_choice_set</sys_class_name>
             <sys_created_by>admin</sys_created_by>
             <sys_created_on>2026-08-26 17:09:58</sys_created_on>
+            <sys_id>ee4bfa8cc3c3831054453fac050131af</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>priority</sys_name>
             <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
@@ -29,6 +30,7 @@
             <sys_created_on>2026-08-27 03:47:52</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>9e8b7640c307831054453fac0501315c</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:47:52</sys_updated_on>
@@ -48,6 +50,7 @@
             <sys_created_on>2026-08-27 03:47:52</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>568b7640c307831054453fac0501315e</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:47:52</sys_updated_on>
@@ -67,6 +70,7 @@
             <sys_created_on>2026-08-27 03:47:52</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>de8b7640c307831054453fac0501319d</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:47:52</sys_updated_on>
@@ -86,6 +90,7 @@
             <sys_created_on>2026-08-27 03:47:52</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
+            <sys_id>968b7640c307831054453fac0501319f</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
             <sys_updated_on>2026-08-27 03:47:52</sys_updated_on>
