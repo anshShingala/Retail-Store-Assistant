@@ -1,152 +1,239 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Store Details" section_id="f1a1b7e7d3f74a839c6900e0415bbb48" sys_domain="global" table="x_1945330_retail_0_store" view="">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>2db3544d89014bd192aef7f51ac9c4f6</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>store_number</element>
-      <position>1</position>
-      <sys_id>3cda514033094f73b11486dfa956906d</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>store_type</element>
-      <position>2</position>
-      <sys_id>c4c95ab2253845aab71bb10e26ad0964</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>3</position>
-      <sys_id>b0dcedae18a94f8688cf490139439a98</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>name</element>
-      <position>4</position>
-      <sys_id>ed98c3b5222d4b53a6e4063e981d367f</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>active</element>
-      <position>5</position>
-      <sys_id>5f4919517d6b49f5838335ab098aaa9b</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>6</position>
-      <sys_id>5488099bdbab4b78872ba07ba0af9b38</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>7</position>
-      <sys_id>883eaa16369f4c049b971dc23537d592</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>address</element>
-      <position>8</position>
-      <sys_id>edb6dd0a224a40f09c699ecee1369970</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>state</element>
-      <position>9</position>
-      <sys_id>356035ef0cd14be5b27d62ae5456155b</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>phone</element>
-      <position>10</position>
-      <sys_id>ce5f47155b5e472ab5885245c502e9cc</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>11</position>
-      <sys_id>1cf560290eca4921a5edf2f3394c9615</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>city</element>
-      <position>12</position>
-      <sys_id>65b4bbde6942451999040b1963be4b0d</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>zip_code</element>
-      <position>13</position>
-      <sys_id>8b63a8ef5ae944ef86f70c8f120c476f</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>14</position>
-      <sys_id>b0c33d0161ae4631b4f1b61ea7955df0</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Store Details</caption>
-      <header>false</header>
-      <name>x_1945330_retail_0_store</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>f1a1b7e7d3f74a839c6900e0415bbb48</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view display_value="Default view" name="NULL">Default view</view>
+    <sys_ui_section caption="Store Details" section_id="f1a1b7e7d3f74a839c6900e0415bbb48" sys_domain="global" table="x_1945330_retail_0_store" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>2db3544d89014bd192aef7f51ac9c4f6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>store_number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>3cda514033094f73b11486dfa956906d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>store_type</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>c4c95ab2253845aab71bb10e26ad0964</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>b0dcedae18a94f8688cf490139439a98</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>name</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>ed98c3b5222d4b53a6e4063e981d367f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>active</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>5f4919517d6b49f5838335ab098aaa9b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>5488099bdbab4b78872ba07ba0af9b38</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>883eaa16369f4c049b971dc23537d592</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>address</element>
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>edb6dd0a224a40f09c699ecee1369970</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>state</element>
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>356035ef0cd14be5b27d62ae5456155b</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>phone</element>
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>ce5f47155b5e472ab5885245c502e9cc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>11</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>1cf560290eca4921a5edf2f3394c9615</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>city</element>
+            <position>12</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>65b4bbde6942451999040b1963be4b0d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>zip_code</element>
+            <position>13</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>8b63a8ef5ae944ef86f70c8f120c476f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>14</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_id>b0c33d0161ae4631b4f1b61ea7955df0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Store Details</caption>
+            <header>false</header>
+            <name>x_1945330_retail_0_store</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:49:03</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f1a1b7e7d3f74a839c6900e0415bbb48</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_store</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_section_f1a1b7e7d3f74a839c6900e0415bbb48</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:49:03</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

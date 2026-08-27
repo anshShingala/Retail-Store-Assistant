@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role_contains">
-  <sys_user_role_contains action="INSERT_OR_UPDATE">
-    <sys_id>4b17bcd4be5e440f812be25924083a7c</sys_id>
-    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_user_role_contains_4b17bcd4be5e440f812be25924083a7c</sys_update_name>
-    <contains name="x_1945330_retail_0.retail_store_manager">f935624749294ac9bff9e7cb23b70c33</contains>
-    <role name="x_1945330_retail_0.retail_investigator">951765dc53e54236897bb1378c070472</role>
-  </sys_user_role_contains>
+    <sys_user_role_contains action="INSERT_OR_UPDATE">
+        <contains display_value="x_1945330_retail_0.retail_store_manager" name="x_1945330_retail_0.retail_store_manager">f935624749294ac9bff9e7cb23b70c33</contains>
+        <role display_value="x_1945330_retail_0.retail_investigator" name="x_1945330_retail_0.retail_investigator">951765dc53e54236897bb1378c070472</role>
+        <sys_class_name>sys_user_role_contains</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 18:22:35</sys_created_on>
+        <sys_id>4b17bcd4be5e440f812be25924083a7c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name/>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_user_role_contains_4b17bcd4be5e440f812be25924083a7c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 18:22:35</sys_updated_on>
+    </sys_user_role_contains>
 </record_update>

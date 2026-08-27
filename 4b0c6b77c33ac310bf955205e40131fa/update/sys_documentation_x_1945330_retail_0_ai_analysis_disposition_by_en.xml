@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_documentation element="disposition_by" label="Disposition By" language="en" table="x_1945330_retail_0_ai_analysis">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>disposition_by</element>
+            <help/>
+            <hint/>
+            <label>Disposition By</label>
+            <language>en</language>
+            <name>x_1945330_retail_0_ai_analysis</name>
+            <plural>Disposition Bys</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-26 18:00:29</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Disposition By</sys_name>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_documentation_x_1945330_retail_0_ai_analysis_disposition_by_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-26 18:00:29</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="cf4471fc3dac4b81a37064785cf01bb3" label="Product" name="x_1945330_retail_0_product" type="collection">
+        <element choice="1" label="Category" max_length="40" name="category" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Electronics" sequence="1" value="electronics"/>
+                <element inactive_on_update="false" label="Office Supplies" sequence="9" value="office_supplies"/>
+                <element inactive_on_update="false" label="Clothing" sequence="2" value="clothing"/>
+                <element inactive_on_update="false" label="Automotive" sequence="8" value="automotive"/>
+                <element inactive_on_update="false" label="Toys &amp; Games" sequence="6" value="toys_games"/>
+                <element inactive_on_update="false" label="Other" sequence="10" value="other"/>
+                <element inactive_on_update="false" label="Food &amp; Beverage" sequence="3" value="food_beverage"/>
+                <element inactive_on_update="false" label="Health &amp; Beauty" sequence="5" value="health_beauty"/>
+                <element inactive_on_update="false" label="Home &amp; Garden" sequence="4" value="home_garden"/>
+                <element inactive_on_update="false" label="Sports &amp; Outdoors" sequence="7" value="sports_outdoors"/>
+            </choice>
+        </element>
+        <element label="Product Number" mandatory="true" max_length="40" name="product_number" type="string" unique="true"/>
+        <element label="Description" max_length="4000" name="description" type="multi_two_lines"/>
+        <element default="true" label="Active" max_length="40" name="active" type="boolean"/>
+        <element label="Brand" max_length="100" name="brand" type="string"/>
+        <element display="true" label="Name" max_length="100" name="name" type="string"/>
+    </element>
+</database>

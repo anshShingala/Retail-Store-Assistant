@@ -1,43 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_form_sections form_id="79b0996f310341b7b4398231d09f4171" sys_domain="global" table="x_1945330_retail_0_inv_txn">
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>0</position>
-      <sys_id>6f195d372fb7420082ff19ad84d9f76f</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
-      <sys_ui_section caption="Transaction Identity" display_value="Transaction Identity" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">7a05a1f23ced4fcc9767b19d952c9629</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>1</position>
-      <sys_id>5a006aa1ec2149d4bf8ea621c2942331</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
-      <sys_ui_section caption="Inventory Movement" display_value="Inventory Movement" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">50ea0ed5999c43b5806ffc0f9ab0f74d</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>2</position>
-      <sys_id>bff68693289747a1ae9ec877c8b11b54</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
-      <sys_ui_section caption="Source / Related Record" display_value="Source / Related Record" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">59a35edbb1ae46f6bcc23658582513ec</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>3</position>
-      <sys_id>7bb67c8a38534cc7b33f5ceee76875e6</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
-      <sys_ui_section caption="Posting Information" display_value="Posting Information" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">a7f513e8288a4429aa8ce7c4aa505afd</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>4</position>
-      <sys_id>f9f06b31494f4715a1988d45503939e5</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
-      <sys_ui_section caption="Audit" display_value="Audit" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">e427ee0a691242e9a62c51779320c3d0</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form action="INSERT_OR_UPDATE">
-      <name>x_1945330_retail_0_inv_txn</name>
-      <roles/>
-      <sys_id>79b0996f310341b7b4398231d09f4171</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <view display_value="Default view" name="NULL">Default view</view>
-      <view_name/>
-    </sys_ui_form>
-  </sys_ui_form_sections>
+    <sys_ui_form_sections form_id="79b0996f310341b7b4398231d09f4171" sys_domain="global" table="x_1945330_retail_0_inv_txn" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>6f195d372fb7420082ff19ad84d9f76f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
+            <sys_ui_section caption="Transaction Identity" display_value="Transaction Identity" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">7a05a1f23ced4fcc9767b19d952c9629</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5a006aa1ec2149d4bf8ea621c2942331</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
+            <sys_ui_section caption="Inventory Movement" display_value="Inventory Movement" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">50ea0ed5999c43b5806ffc0f9ab0f74d</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>bff68693289747a1ae9ec877c8b11b54</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
+            <sys_ui_section caption="Source / Related Record" display_value="Source / Related Record" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">59a35edbb1ae46f6bcc23658582513ec</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>7bb67c8a38534cc7b33f5ceee76875e6</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
+            <sys_ui_section caption="Posting Information" display_value="Posting Information" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">a7f513e8288a4429aa8ce7c4aa505afd</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>f9f06b31494f4715a1988d45503939e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_inv_txn" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">79b0996f310341b7b4398231d09f4171</sys_ui_form>
+            <sys_ui_section caption="Audit" display_value="Audit" name="x_1945330_retail_0_inv_txn" sys_domain="global" view="Default view">e427ee0a691242e9a62c51779320c3d0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1945330_retail_0_inv_txn</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>79b0996f310341b7b4398231d09f4171</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_inv_txn</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_form_sections_79b0996f310341b7b4398231d09f4171</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
 </record_update>

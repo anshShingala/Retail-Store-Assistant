@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="be4db2558f0c4923b63d2134214dcb9c" label="Investigation" name="x_1945330_retail_0_investigation" type="collection">
+        <element label="Closed By" max_length="32" name="closed_by" reference="sys_user" type="reference"/>
+        <element label="Findings" max_length="4000" name="findings" type="multi_two_lines"/>
+        <element label="Closed On" max_length="40" name="closed_on" type="glide_date_time"/>
+        <element label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Related Transfer" max_length="32" name="related_transfer" reference="x_1945330_retail_0_transfer" type="reference"/>
+        <element label="Related Reservation" max_length="32" name="related_reservation" reference="x_1945330_retail_0_reservation" type="reference"/>
+        <element label="Opened On" max_length="40" name="opened_on" type="glide_date_time"/>
+        <element label="Resolution" max_length="40" name="resolution" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Adjustment Required" sequence="2" value="adjustment_required"/>
+                <element inactive_on_update="false" label="No Adjustment" sequence="1" value="no_adjustment"/>
+            </choice>
+        </element>
+        <element label="Related Transaction" max_length="32" name="related_transaction" reference="x_1945330_retail_0_inv_txn" type="reference"/>
+        <element choice="3" default="open" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Open" sequence="1" value="open"/>
+                <element inactive_on_update="false" label="Closed" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="Resolved" sequence="3" value="resolved"/>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="in_progress"/>
+            </choice>
+        </element>
+        <element display="true" label="Investigation Number" mandatory="true" max_length="40" name="investigation_number" type="string" unique="true"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element label="Discrepancy" mandatory="true" max_length="32" name="discrepancy" reference="x_1945330_retail_0_discrepancy" type="reference"/>
+        <element label="Resolution Notes" max_length="4000" name="resolution_notes" type="multi_two_lines"/>
+        <element label="Due On" max_length="40" name="due_on" type="glide_date_time"/>
+        <element label="Related Count" max_length="32" name="related_count" reference="x_1945330_retail_0_phys_count" type="reference"/>
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Priority" max_length="40" name="priority" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="High" sequence="3" value="high"/>
+                <element inactive_on_update="false" label="Medium" sequence="2" value="medium"/>
+                <element inactive_on_update="false" label="Critical" sequence="4" value="critical"/>
+                <element inactive_on_update="false" label="Low" sequence="1" value="low"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2">
+            <element name="closed_by"/>
+        </index>
+        <index name="index3">
+            <element name="discrepancy"/>
+        </index>
+        <index name="index4" unique="true">
+            <element name="investigation_number"/>
+        </index>
+        <index name="index5">
+            <element name="related_count"/>
+        </index>
+        <index name="index6">
+            <element name="related_reservation"/>
+        </index>
+        <index name="index7">
+            <element name="related_transaction"/>
+        </index>
+        <index name="index8">
+            <element name="related_transfer"/>
+        </index>
+        <index name="index9">
+            <element name="sku"/>
+        </index>
+        <index name="index10">
+            <element name="store"/>
+        </index>
+    </element>
+</database>

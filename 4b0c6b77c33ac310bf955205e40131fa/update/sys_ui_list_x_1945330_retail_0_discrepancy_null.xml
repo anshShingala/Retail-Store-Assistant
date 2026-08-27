@@ -1,58 +1,152 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_list table="x_1945330_retail_0_discrepancy">
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>b0c3d1540ea24230a4c69d8e8c6aaf05</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>discrepancy_number</element>
-      <position>0</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>977a9b6afeb447debb0af0fa3c0d7ccc</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>store</element>
-      <position>1</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>d18d1a72022a4e9184ab66836e6fbd4e</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>sku</element>
-      <position>2</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>49ac298a17bb46edbe205dbcd70c713d</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>system_quantity</element>
-      <position>3</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>e5a8db12eea140649516bf50f3471e42</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>counted_quantity</element>
-      <position>4</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>8292323ef9bc4e1c8e3d3b6d2425c038</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>variance</element>
-      <position>5</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>b54f448c496745069c1c885dca43cc9c</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>discrepancy_type</element>
-      <position>6</position>
-    </sys_ui_list_element>
-    <sys_ui_list_element action="INSERT_OR_UPDATE">
-      <sys_id>14cbee206b5a44d99dc1ef419c5fef9d</sys_id>
-      <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
-      <element>status</element>
-      <position>7</position>
-    </sys_ui_list_element>
-    <sys_ui_list action="INSERT_OR_UPDATE">
-      <sys_id>2843f6559724499aa53576aedf363675</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <view name="NULL">Default view</view>
-      <name>x_1945330_retail_0_discrepancy</name>
+    <sys_ui_list parent="" relationship="" sys_domain="global" table="x_1945330_retail_0_discrepancy" version="2" view="">
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>discrepancy_number</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>0</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>b0c3d1540ea24230a4c69d8e8c6aaf05</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>store</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>1</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>977a9b6afeb447debb0af0fa3c0d7ccc</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>sku</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>2</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>d18d1a72022a4e9184ab66836e6fbd4e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>system_quantity</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>3</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>49ac298a17bb46edbe205dbcd70c713d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>counted_quantity</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>4</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>e5a8db12eea140649516bf50f3471e42</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>variance</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>8292323ef9bc4e1c8e3d3b6d2425c038</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>discrepancy_type</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>6</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>b54f448c496745069c1c885dca43cc9c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>status</element>
+            <list_id display_value="x_1945330_retail_0_discrepancy" element="NULL" name="x_1945330_retail_0_discrepancy" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">2843f6559724499aa53576aedf363675</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>7</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_id>14cbee206b5a44d99dc1ef419c5fef9d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element/>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <name>x_1945330_retail_0_discrepancy</name>
+            <parent/>
+            <position/>
+            <relationship/>
+            <sum>false</sum>
+            <sys_class_name>sys_ui_list</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:43</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2843f6559724499aa53576aedf363675</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_discrepancy</sys_name>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_list_x_1945330_retail_0_discrepancy_null</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:43</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_list>
     </sys_ui_list>
-  </sys_ui_list>
 </record_update>

@@ -1,49 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_form_sections form_id="43ddfce930ee45c88d961e43c3d70132" sys_domain="global" table="x_1945330_retail_0_ai_analysis">
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>0</position>
-      <sys_id>5b396026ea68463fab743c416f95defd</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>1</position>
-      <sys_id>1bf5f3b471be42c59f1b0f6421b52780</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="Investigation Context" display_value="Investigation Context" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">689509eb5cc9412097a0e1d54d61c246</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>2</position>
-      <sys_id>b0e6546a97914ce0a30c84dc7c942126</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="AI Findings" display_value="AI Findings" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">0833cbd59f4f499786767d6b28f83896</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>3</position>
-      <sys_id>91a0a9ecbade4609ada9fe328e99c3a3</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="Authorized Context" display_value="Authorized Context" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">e33a7a0d16294801afd2d966f3ac19be</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>4</position>
-      <sys_id>80ddde7bb03747cb9a7dad0de428bbb1</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>5</position>
-      <sys_id>28ea43dc014c412883825c4ae012d0e5</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
-      <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form action="INSERT_OR_UPDATE">
-      <name>x_1945330_retail_0_ai_analysis</name>
-      <roles/>
-      <sys_id>43ddfce930ee45c88d961e43c3d70132</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <view display_value="Default view" name="NULL">Default view</view>
-      <view_name/>
-    </sys_ui_form>
-  </sys_ui_form_sections>
+    <sys_ui_form_sections form_id="43ddfce930ee45c88d961e43c3d70132" sys_domain="global" table="x_1945330_retail_0_ai_analysis" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5b396026ea68463fab743c416f95defd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="Analysis Details" display_value="Analysis Details" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">b698b275336647919f66d2320cc122e6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1bf5f3b471be42c59f1b0f6421b52780</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="Investigation Context" display_value="Investigation Context" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">689509eb5cc9412097a0e1d54d61c246</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>b0e6546a97914ce0a30c84dc7c942126</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="AI Findings" display_value="AI Findings" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">0833cbd59f4f499786767d6b28f83896</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>91a0a9ecbade4609ada9fe328e99c3a3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="Authorized Context" display_value="Authorized Context" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">e33a7a0d16294801afd2d966f3ac19be</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>80ddde7bb03747cb9a7dad0de428bbb1</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="Human Disposition" display_value="Human Disposition" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">71be2110b2b848daa3166e5493da47b6</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>28ea43dc014c412883825c4ae012d0e5</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_ai_analysis" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">43ddfce930ee45c88d961e43c3d70132</sys_ui_form>
+            <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1945330_retail_0_ai_analysis</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>43ddfce930ee45c88d961e43c3d70132</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_ai_analysis</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_form_sections_43ddfce930ee45c88d961e43c3d70132</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
 </record_update>

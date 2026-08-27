@@ -1,15 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_user_role">
-  <sys_user_role action="INSERT_OR_UPDATE">
-    <sys_id>f935624749294ac9bff9e7cb23b70c33</sys_id>
-    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_user_role_f935624749294ac9bff9e7cb23b70c33</sys_update_name>
-    <assignable_by/>
-    <can_delegate>true</can_delegate>
-    <description>Store manager with create/write access to reference data and operational records</description>
-    <elevated_privilege>false</elevated_privilege>
-    <grantable>true</grantable>
-    <name>x_1945330_retail_0.retail_store_manager</name>
-    <scoped_admin>false</scoped_admin>
-    <suffix>retail_store_manager</suffix>
-  </sys_user_role>
+    <sys_user_role action="INSERT_OR_UPDATE">
+        <assignable_by/>
+        <can_delegate>true</can_delegate>
+        <description>Store manager with create/write access to reference data and operational records</description>
+        <elevated_privilege>false</elevated_privilege>
+        <federated_id>FNRAouPbfLRBuYyYK8VbMUpu8BUDKRHlzD0DkJSzkhI=</federated_id>
+        <grantable>true</grantable>
+        <includes_roles/>
+        <name>x_1945330_retail_0.retail_store_manager</name>
+        <scoped_admin>false</scoped_admin>
+        <suffix>retail_store_manager</suffix>
+        <sys_class_name>sys_user_role</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-26 18:22:36</sys_created_on>
+        <sys_id>f935624749294ac9bff9e7cb23b70c33</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_1945330_retail_0.retail_store_manager</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_user_role_f935624749294ac9bff9e7cb23b70c33</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-26 18:22:36</sys_updated_on>
+    </sys_user_role>
 </record_update>

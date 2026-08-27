@@ -1,89 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Request Details" section_id="17322bb3a3eb4fa7bf34d4735f8dbb09" sys_domain="global" table="x_1945330_retail_0_adj_req" view="">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>5d686f98cb0446dbb4c5cde7add3dc41</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>adjustment_number</element>
-      <position>1</position>
-      <sys_id>1e869c5ba9d64a1089ad0882975921dd</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>investigation</element>
-      <position>2</position>
-      <sys_id>14c1b7e367df48f59d20ed7f1a883a1f</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>sku</element>
-      <position>3</position>
-      <sys_id>ed2c97883e614226b0b22dbb56b001f0</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>4</position>
-      <sys_id>24aeeda8f8cd4cbf8e99895cab723976</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>status</element>
-      <position>5</position>
-      <sys_id>56d22e2ee9d14bf6baca0b27e83b159c</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>store</element>
-      <position>6</position>
-      <sys_id>f453d613727d4df3ba37f39d2d3d359c</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>7</position>
-      <sys_id>9939acfbf0df4f45aac40490cdde578c</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Request Details</caption>
-      <header>false</header>
-      <name>x_1945330_retail_0_adj_req</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>17322bb3a3eb4fa7bf34d4735f8dbb09</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view display_value="Default view" name="NULL">Default view</view>
+    <sys_ui_section caption="Request Details" section_id="17322bb3a3eb4fa7bf34d4735f8dbb09" sys_domain="global" table="x_1945330_retail_0_adj_req" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>5d686f98cb0446dbb4c5cde7add3dc41</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>adjustment_number</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>1e869c5ba9d64a1089ad0882975921dd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>investigation</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>14c1b7e367df48f59d20ed7f1a883a1f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sku</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>ed2c97883e614226b0b22dbb56b001f0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>24aeeda8f8cd4cbf8e99895cab723976</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>status</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>56d22e2ee9d14bf6baca0b27e83b159c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>store</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>f453d613727d4df3ba37f39d2d3d359c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_id>9939acfbf0df4f45aac40490cdde578c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Request Details" display_value="Request Details" name="x_1945330_retail_0_adj_req" sys_domain="global" view="Default view">17322bb3a3eb4fa7bf34d4735f8dbb09</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Request Details</caption>
+            <header>false</header>
+            <name>x_1945330_retail_0_adj_req</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:49</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>17322bb3a3eb4fa7bf34d4735f8dbb09</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_adj_req</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_section_17322bb3a3eb4fa7bf34d4735f8dbb09</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:49</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

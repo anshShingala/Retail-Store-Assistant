@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
-  <sys_ui_policy_action action="INSERT_OR_UPDATE">
-    <sys_id>e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_id>
-    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_ui_policy_action_e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_update_name>
-    <cleared>false</cleared>
-    <disabled>ignore</disabled>
-    <field>failure_reason</field>
-    <field_message/>
-    <field_message_type>none</field_message_type>
-    <mandatory>ignore</mandatory>
-    <table>x_1945330_retail_0_ai_analysis</table>
-    <ui_policy short_description="Show failure reason when failed" table="x_1945330_retail_0_ai_analysis">c122200af8ed490ba4784f82b3aaf56e</ui_policy>
-    <value/>
-    <value_action>ignore</value_action>
-    <visible>true</visible>
-  </sys_ui_policy_action>
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>ignore</disabled>
+        <field>failure_reason</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 03:48:48</sys_created_on>
+        <sys_id>e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>failure_reason</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_ui_policy_action_e7d2a1d072bc4a6d984c2eb9d5828ae1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 03:48:48</sys_updated_on>
+        <table>x_1945330_retail_0_ai_analysis</table>
+        <ui_policy display_value="Show failure reason when failed">c122200af8ed490ba4784f82b3aaf56e</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=e7d2a1d072bc4a6d984c2eb9d5828ae1"/>
 </record_update>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="08b8e46570de41c3891042f4f72ed0fe" label="Reservation" name="x_1945330_retail_0_reservation" type="collection">
+        <element label="Cancellation Reason" max_length="4000" name="cancellation_reason" type="multi_two_lines"/>
+        <element label="Pickup Reference" max_length="200" name="pickup_reference" type="string"/>
+        <element label="Ready On" max_length="40" name="ready_on" type="glide_date_time"/>
+        <element label="Pickup On" max_length="40" name="pickup_on" type="glide_date_time"/>
+        <element label="Idempotency Key" mandatory="true" max_length="200" name="idempotency_key" type="string" unique="true"/>
+        <element label="Customer Reference" max_length="200" name="customer_reference" type="string"/>
+        <element label="Customer Contact Reference" max_length="200" name="customer_contact_reference" type="string"/>
+        <element display="true" label="Reservation Number" mandatory="true" max_length="40" name="reservation_number" type="string" unique="true"/>
+        <element label="Expires On" max_length="40" name="expires_on" type="glide_date_time"/>
+        <element label="Customer Display Name" max_length="200" name="customer_display_name" type="string"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element label="Requested On" max_length="40" name="requested_on" type="glide_date_time"/>
+        <element label="Confirmed On" max_length="40" name="confirmed_on" type="glide_date_time"/>
+        <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
+        <element label="Holding Store" mandatory="true" max_length="32" name="holding_store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element choice="3" default="requested" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Ready for Pickup" sequence="3" value="ready_for_pickup"/>
+                <element inactive_on_update="false" label="Requested" sequence="1" value="requested"/>
+                <element inactive_on_update="false" label="Expired" sequence="6" value="expired"/>
+                <element inactive_on_update="false" label="Confirmed" sequence="2" value="confirmed"/>
+                <element inactive_on_update="false" label="Picked Up" sequence="4" value="picked_up"/>
+                <element inactive_on_update="false" label="Cancelled" sequence="5" value="cancelled"/>
+            </choice>
+        </element>
+        <element label="Requested By" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element label="Cancelled On" max_length="40" name="cancelled_on" type="glide_date_time"/>
+        <index name="index">
+            <element name="holding_store"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="idempotency_key"/>
+        </index>
+        <index name="index3">
+            <element name="requested_by"/>
+        </index>
+        <index name="index4">
+            <element name="sku"/>
+        </index>
+    </element>
+</database>

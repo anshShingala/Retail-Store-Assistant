@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="567745eed1ef43cdb6fa99a15ef49aae" label="Physical Count" name="x_1945330_retail_0_phys_count" type="collection">
+        <element label="Counted Quantity" mandatory="true" max_length="40" name="counted_quantity" type="integer"/>
+        <element label="Snapshot On" max_length="40" name="snapshot_on" read_only="true" read_only_option="instance_configured" type="glide_date_time"/>
+        <element label="System Snapshot Quantity" max_length="40" name="system_snapshot_quantity" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="Counted By" mandatory="true" max_length="32" name="counted_by" reference="sys_user" type="reference"/>
+        <element label="Expected Quantity" max_length="40" name="expected_quantity" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="Variance" max_length="40" name="variance" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element label="Completed On" max_length="40" name="completed_on" type="glide_date_time"/>
+        <element label="Recount Of" max_length="32" name="recount_of" reference="x_1945330_retail_0_phys_count" type="reference"/>
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Notes" max_length="4000" name="notes" type="multi_two_lines"/>
+        <element label="Counted On" max_length="40" name="counted_on" type="glide_date_time"/>
+        <element label="Idempotency Key" mandatory="true" max_length="200" name="idempotency_key" type="string" unique="true"/>
+        <element label="Count Method" max_length="40" name="count_method" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Spot Check" sequence="3" value="spot"/>
+                <element inactive_on_update="false" label="Cycle Count" sequence="2" value="cycle"/>
+                <element inactive_on_update="false" label="Full Count" sequence="1" value="full"/>
+            </choice>
+        </element>
+        <element choice="3" default="created" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Submitted" sequence="3" value="submitted"/>
+                <element inactive_on_update="false" label="In Progress" sequence="2" value="in_progress"/>
+                <element inactive_on_update="false" label="Created" sequence="1" value="created"/>
+            </choice>
+        </element>
+        <element display="true" label="Count Number" mandatory="true" max_length="40" name="count_number" type="string" unique="true"/>
+        <index name="index" unique="true">
+            <element name="count_number"/>
+        </index>
+        <index name="index2">
+            <element name="counted_by"/>
+        </index>
+        <index name="index3" unique="true">
+            <element name="idempotency_key"/>
+        </index>
+        <index name="index4">
+            <element name="recount_of"/>
+        </index>
+        <index name="index5">
+            <element name="sku"/>
+        </index>
+        <index name="index6">
+            <element name="store"/>
+        </index>
+    </element>
+</database>

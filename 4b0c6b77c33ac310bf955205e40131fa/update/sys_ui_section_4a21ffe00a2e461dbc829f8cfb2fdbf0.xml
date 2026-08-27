@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Completion / Failure" section_id="4a21ffe00a2e461dbc829f8cfb2fdbf0" sys_domain="global" table="x_1945330_retail_0_ai_analysis" view="">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>completed_on</element>
-      <position>0</position>
-      <sys_id>8e8c78acde3f4cd1b9afc8be929cbc8e</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>failure_reason</element>
-      <position>1</position>
-      <sys_id>a0c4c7daef974a6384e65f65b66e2bec</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Completion / Failure</caption>
-      <header>false</header>
-      <name>x_1945330_retail_0_ai_analysis</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view display_value="Default view" name="NULL">Default view</view>
+    <sys_ui_section caption="Completion / Failure" section_id="4a21ffe00a2e461dbc829f8cfb2fdbf0" sys_domain="global" table="x_1945330_retail_0_ai_analysis" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>completed_on</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>8e8c78acde3f4cd1b9afc8be929cbc8e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>failure_reason</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>a0c4c7daef974a6384e65f65b66e2bec</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Completion / Failure" display_value="Completion / Failure" name="x_1945330_retail_0_ai_analysis" sys_domain="global" view="Default view">4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Completion / Failure</caption>
+            <header>false</header>
+            <name>x_1945330_retail_0_ai_analysis</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_ai_analysis</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_section_4a21ffe00a2e461dbc829f8cfb2fdbf0</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

@@ -1,19 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_form_sections form_id="2ff865d304b648079f80130ce53dc46c" sys_domain="global" table="x_1945330_retail_0_store">
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>0</position>
-      <sys_id>8b6a73343e844448a0783f7a811b5eca</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_store" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">2ff865d304b648079f80130ce53dc46c</sys_ui_form>
-      <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form action="INSERT_OR_UPDATE">
-      <name>x_1945330_retail_0_store</name>
-      <roles/>
-      <sys_id>2ff865d304b648079f80130ce53dc46c</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <view display_value="Default view" name="NULL">Default view</view>
-      <view_name/>
-    </sys_ui_form>
-  </sys_ui_form_sections>
+    <sys_ui_form_sections form_id="2ff865d304b648079f80130ce53dc46c" sys_domain="global" table="x_1945330_retail_0_store" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8b6a73343e844448a0783f7a811b5eca</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_store" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">2ff865d304b648079f80130ce53dc46c</sys_ui_form>
+            <sys_ui_section caption="Store Details" display_value="Store Details" name="x_1945330_retail_0_store" sys_domain="global" view="Default view">f1a1b7e7d3f74a839c6900e0415bbb48</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1945330_retail_0_store</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:40</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2ff865d304b648079f80130ce53dc46c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_store</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_form_sections_2ff865d304b648079f80130ce53dc46c</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:40</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
 </record_update>

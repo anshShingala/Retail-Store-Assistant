@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="95bcd59d3b2749b9809b718649612953" label="Inventory Position" name="x_1945330_retail_0_inv_pos" type="collection">
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element choice="3" default="normal" label="Integrity Status" max_length="40" name="integrity_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Normal" sequence="1" value="normal"/>
+                <element inactive_on_update="false" label="Reconciliation Required" sequence="2" value="reconciliation_required"/>
+            </choice>
+        </element>
+        <element default="0" label="Reserved" max_length="40" name="reserved" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element default="0" label="Unavailable" max_length="40" name="unavailable" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element default="0" label="On Hand" max_length="40" name="on_hand" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <element label="Last Recalculated On" max_length="40" name="last_recalculated_on" read_only="true" read_only_option="instance_configured" type="glide_date_time"/>
+        <element default="0" label="Available" max_length="40" name="available" read_only="true" read_only_option="instance_configured" type="integer"/>
+        <index name="index">
+            <element name="sku"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="store"/>
+            <element name="sku"/>
+        </index>
+    </element>
+</database>

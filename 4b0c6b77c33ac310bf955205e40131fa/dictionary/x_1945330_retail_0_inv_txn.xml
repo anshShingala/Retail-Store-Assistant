@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="068c9cd2ddcd4570863c52799d2e0bd8" label="Inventory Transaction" name="x_1945330_retail_0_inv_txn" type="collection">
+        <element label="Posted On" max_length="40" name="posted_on" type="glide_date_time"/>
+        <element label="Original Transaction" max_length="32" name="original_transaction" reference="x_1945330_retail_0_inv_txn" type="reference"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element choice="3" label="Movement Direction" mandatory="true" max_length="40" name="movement_direction" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="In" sequence="1" value="in"/>
+                <element inactive_on_update="false" label="Out" sequence="2" value="out"/>
+            </choice>
+        </element>
+        <element choice="3" label="Transaction Type" mandatory="true" max_length="40" name="transaction_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Correction" sequence="8" value="correction"/>
+                <element inactive_on_update="false" label="Sale" sequence="2" value="sale"/>
+                <element inactive_on_update="false" label="Damage" sequence="6" value="damage"/>
+                <element inactive_on_update="false" label="Receive" sequence="1" value="receive"/>
+                <element inactive_on_update="false" label="Reversal" sequence="9" value="reversal"/>
+                <element inactive_on_update="false" label="Adjustment" sequence="7" value="adjustment"/>
+                <element inactive_on_update="false" label="Return" sequence="3" value="return_goods"/>
+                <element inactive_on_update="false" label="Transfer Out" sequence="4" value="transfer_out"/>
+                <element inactive_on_update="false" label="Transfer In" sequence="5" value="transfer_in"/>
+            </choice>
+        </element>
+        <element label="Adjustment Request" max_length="32" name="adjustment_request" reference="x_1945330_retail_0_adj_req" type="reference"/>
+        <element label="Transfer" max_length="32" name="transfer" reference="x_1945330_retail_0_transfer" type="reference"/>
+        <element label="Quantity" mandatory="true" max_length="40" name="quantity" type="integer"/>
+        <element label="Idempotency Key" mandatory="true" max_length="200" name="idempotency_key" type="string" unique="true"/>
+        <element display="true" label="Transaction Number" mandatory="true" max_length="40" name="transaction_number" type="string" unique="true"/>
+        <element label="Posting Reference" max_length="200" name="posting_reference" type="string"/>
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Transaction Date" max_length="40" name="transaction_date" type="glide_date_time"/>
+        <element label="Posted By" mandatory="true" max_length="32" name="posted_by" reference="sys_user" type="reference"/>
+        <index name="index">
+            <element name="adjustment_request"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="idempotency_key"/>
+        </index>
+        <index name="index3">
+            <element name="original_transaction"/>
+        </index>
+        <index name="index4">
+            <element name="posted_by"/>
+        </index>
+        <index name="index5">
+            <element name="sku"/>
+        </index>
+        <index name="index6">
+            <element name="store"/>
+        </index>
+        <index name="index7">
+            <element name="transfer"/>
+        </index>
+    </element>
+</database>

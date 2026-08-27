@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_policy_action">
-  <sys_ui_policy_action action="INSERT_OR_UPDATE">
-    <sys_id>cc452c81e4944070b134b21a75c65040</sys_id>
-    <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-    <sys_update_name>sys_ui_policy_action_cc452c81e4944070b134b21a75c65040</sys_update_name>
-    <cleared>false</cleared>
-    <disabled>true</disabled>
-    <field>resulting_transaction</field>
-    <field_message/>
-    <field_message_type>none</field_message_type>
-    <mandatory>ignore</mandatory>
-    <table>x_1945330_retail_0_adj_req</table>
-    <ui_policy short_description="Show posting fields when posting or posted" table="x_1945330_retail_0_adj_req">32621764dfe947b7b89c8a9cd5bf1608</ui_policy>
-    <value/>
-    <value_action>ignore</value_action>
-    <visible>true</visible>
-  </sys_ui_policy_action>
+    <sys_ui_policy_action action="INSERT_OR_UPDATE">
+        <cleared>false</cleared>
+        <disabled>true</disabled>
+        <field>resulting_transaction</field>
+        <field_message/>
+        <field_message_type>none</field_message_type>
+        <mandatory>ignore</mandatory>
+        <sys_class_name>sys_ui_policy_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2026-08-27 03:48:48</sys_created_on>
+        <sys_id>cc452c81e4944070b134b21a75c65040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>resulting_transaction</sys_name>
+        <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+        <sys_update_name>sys_ui_policy_action_cc452c81e4944070b134b21a75c65040</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2026-08-27 03:48:48</sys_updated_on>
+        <table>x_1945330_retail_0_adj_req</table>
+        <ui_policy display_value="Show posting fields when posting or posted">32621764dfe947b7b89c8a9cd5bf1608</ui_policy>
+        <value/>
+        <value_action>ignore</value_action>
+        <visible>true</visible>
+    </sys_ui_policy_action>
+    <sys_translated_text action="delete_multiple" query="documentkey=cc452c81e4944070b134b21a75c65040"/>
 </record_update>

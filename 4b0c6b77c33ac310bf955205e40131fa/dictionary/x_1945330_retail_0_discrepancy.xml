@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9fbb6a2e1d974698874b3b901b1e7718" label="Discrepancy" name="x_1945330_retail_0_discrepancy" type="collection">
+        <element choice="3" label="Discrepancy Type" mandatory="true" max_length="40" name="discrepancy_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Shortage" sequence="1" value="shortage"/>
+                <element inactive_on_update="false" label="Overage" sequence="2" value="overage"/>
+            </choice>
+        </element>
+        <element label="Investigation" max_length="32" name="investigation" reference="x_1945330_retail_0_investigation" type="reference"/>
+        <element label="Physical Count" mandatory="true" max_length="32" name="physical_count" reference="x_1945330_retail_0_phys_count" type="reference"/>
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Notes" max_length="4000" name="notes" type="multi_two_lines"/>
+        <element label="Variance" mandatory="true" max_length="40" name="variance" type="integer"/>
+        <element label="Detected On" mandatory="true" max_length="40" name="detected_on" type="glide_date_time"/>
+        <element display="true" label="Discrepancy Number" mandatory="true" max_length="40" name="discrepancy_number" type="string" unique="true"/>
+        <element label="Assigned To" max_length="32" name="assigned_to" reference="sys_user" type="reference"/>
+        <element label="Counted Quantity" mandatory="true" max_length="40" name="counted_quantity" type="integer"/>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element choice="3" default="new" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Closed" sequence="4" value="closed"/>
+                <element inactive_on_update="false" label="Resolved" sequence="3" value="resolved"/>
+                <element inactive_on_update="false" label="New" sequence="1" value="new"/>
+                <element inactive_on_update="false" label="Under Investigation" sequence="2" value="under_investigation"/>
+            </choice>
+        </element>
+        <element label="System Quantity" mandatory="true" max_length="40" name="system_quantity" type="integer"/>
+        <index name="index">
+            <element name="assigned_to"/>
+        </index>
+        <index name="index2" unique="true">
+            <element name="discrepancy_number"/>
+        </index>
+        <index name="index3">
+            <element name="investigation"/>
+        </index>
+        <index name="index4">
+            <element name="physical_count"/>
+        </index>
+        <index name="index5">
+            <element name="sku"/>
+        </index>
+        <index name="index6">
+            <element name="store"/>
+        </index>
+    </element>
+</database>

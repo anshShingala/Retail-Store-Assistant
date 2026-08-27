@@ -1,80 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_section caption="Movement" section_id="4c7c7561641d4fdc8581b613075b2ab4" sys_domain="global" table="x_1945330_retail_0_transfer" view="">
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.begin_split</element>
-      <position>0</position>
-      <sys_id>a0c2893c147f4774bd91f328daa731e2</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type>.begin_split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>source_store</element>
-      <position>1</position>
-      <sys_id>55e4fc09055c4590bf584f24f9674f80</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>sku</element>
-      <position>2</position>
-      <sys_id>6f273e52bbb248988228a2d0396247e8</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.split</element>
-      <position>3</position>
-      <sys_id>5eb231959b0c4968838e4ac95fdc5035</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type>.split</type>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>destination_store</element>
-      <position>4</position>
-      <sys_id>9de27ffa739143e88e3f34bca9551098</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>quantity</element>
-      <position>5</position>
-      <sys_id>cc7de2e04083487ab8a48d861d0cde76</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type/>
-    </sys_ui_element>
-    <sys_ui_element action="INSERT_OR_UPDATE">
-      <element>.end_split</element>
-      <position>6</position>
-      <sys_id>f8a5bca8123c42429d2127a101c4cce7</sys_id>
-      <sys_ui_formatter/>
-      <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
-      <sys_user/>
-      <type>.end_split</type>
-    </sys_ui_element>
-    <sys_ui_section action="INSERT_OR_UPDATE">
-      <caption>Movement</caption>
-      <header>false</header>
-      <name>x_1945330_retail_0_transfer</name>
-      <roles/>
-      <sys_domain>global</sys_domain>
-      <sys_id>4c7c7561641d4fdc8581b613075b2ab4</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <title>false</title>
-      <view_name/>
-      <view display_value="Default view" name="NULL">Default view</view>
+    <sys_ui_section caption="Movement" section_id="4c7c7561641d4fdc8581b613075b2ab4" sys_domain="global" table="x_1945330_retail_0_transfer" version="3" view="">
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.begin_split</element>
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>a0c2893c147f4774bd91f328daa731e2</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type>.begin_split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>source_store</element>
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>55e4fc09055c4590bf584f24f9674f80</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>sku</element>
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>6f273e52bbb248988228a2d0396247e8</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.split</element>
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>5eb231959b0c4968838e4ac95fdc5035</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type>.split</type>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>destination_store</element>
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>9de27ffa739143e88e3f34bca9551098</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>quantity</element>
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>cc7de2e04083487ab8a48d861d0cde76</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>.end_split</element>
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_id>f8a5bca8123c42429d2127a101c4cce7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="Movement" display_value="Movement" name="x_1945330_retail_0_transfer" sys_domain="global" view="Default view">4c7c7561641d4fdc8581b613075b2ab4</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <type>.end_split</type>
+        </sys_ui_element>
+        <sys_ui_section action="INSERT_OR_UPDATE">
+            <caption>Movement</caption>
+            <header>false</header>
+            <name>x_1945330_retail_0_transfer</name>
+            <roles/>
+            <sys_class_name>sys_ui_section</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:51</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4c7c7561641d4fdc8581b613075b2ab4</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_transfer</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_section_4c7c7561641d4fdc8581b613075b2ab4</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:51</sys_updated_on>
+            <sys_user/>
+            <title>false</title>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_section>
     </sys_ui_section>
-  </sys_ui_section>
 </record_update>

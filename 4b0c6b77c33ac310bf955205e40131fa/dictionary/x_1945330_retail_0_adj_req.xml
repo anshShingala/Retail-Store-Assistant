@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="b9d1444e775d44b99e23e27508350c60" label="Adjustment Request" name="x_1945330_retail_0_adj_req" type="collection">
+        <element display="true" label="Adjustment Number" mandatory="true" max_length="40" name="adjustment_number" type="string" unique="true"/>
+        <element label="Requested By" mandatory="true" max_length="32" name="requested_by" reference="sys_user" type="reference"/>
+        <element label="Idempotency Key" mandatory="true" max_length="200" name="idempotency_key" type="string" unique="true"/>
+        <element label="Policy" max_length="32" name="policy" reference="x_1945330_retail_0_bus_policy" type="reference"/>
+        <element label="Approved On" max_length="40" name="approved_on" type="glide_date_time"/>
+        <element label="Posting Started On" max_length="40" name="posting_started_on" type="glide_date_time"/>
+        <element label="Reason" mandatory="true" max_length="4000" name="reason" type="multi_two_lines"/>
+        <element label="Approval Outcome" max_length="40" name="approval_outcome" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Rejected" sequence="2" value="rejected"/>
+                <element inactive_on_update="false" label="Approved" sequence="1" value="approved"/>
+            </choice>
+        </element>
+        <element label="SKU" mandatory="true" max_length="32" name="sku" reference="x_1945330_retail_0_sku" type="reference"/>
+        <element label="Resulting Transaction" max_length="32" name="resulting_transaction" reference="x_1945330_retail_0_inv_txn" type="reference"/>
+        <element label="Posted On" max_length="40" name="posted_on" type="glide_date_time"/>
+        <element choice="3" default="requested" label="Status" mandatory="true" max_length="40" name="status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Failed" sequence="7" value="failed"/>
+                <element inactive_on_update="false" label="Posting" sequence="4" value="posting"/>
+                <element inactive_on_update="false" label="Rejected" sequence="6" value="rejected"/>
+                <element inactive_on_update="false" label="Approved" sequence="3" value="approved"/>
+                <element inactive_on_update="false" label="Requested" sequence="1" value="requested"/>
+                <element inactive_on_update="false" label="Pending Approval" sequence="2" value="pending_approval"/>
+                <element inactive_on_update="false" label="Posted" sequence="5" value="posted"/>
+            </choice>
+        </element>
+        <element label="Store" mandatory="true" max_length="32" name="store" reference="x_1945330_retail_0_store" type="reference"/>
+        <element label="Requested Quantity" mandatory="true" max_length="40" name="requested_quantity" type="integer"/>
+        <element label="Failure Reason" max_length="4000" name="failure_reason" type="multi_two_lines"/>
+        <element choice="3" label="Requested Direction" mandatory="true" max_length="40" name="requested_direction" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Increase" sequence="1" value="increase"/>
+                <element inactive_on_update="false" label="Decrease" sequence="2" value="decrease"/>
+            </choice>
+        </element>
+        <element label="Policy Version" max_length="100" name="policy_version" type="string"/>
+        <element label="Approver" max_length="32" name="approver" reference="sys_user" type="reference"/>
+        <element label="Investigation" mandatory="true" max_length="32" name="investigation" reference="x_1945330_retail_0_investigation" type="reference"/>
+        <index name="index" unique="true">
+            <element name="adjustment_number"/>
+        </index>
+        <index name="index2">
+            <element name="approver"/>
+        </index>
+        <index name="index3" unique="true">
+            <element name="idempotency_key"/>
+        </index>
+        <index name="index4">
+            <element name="investigation"/>
+        </index>
+        <index name="index5">
+            <element name="policy"/>
+        </index>
+        <index name="index6">
+            <element name="requested_by"/>
+        </index>
+        <index name="index7">
+            <element name="resulting_transaction"/>
+        </index>
+        <index name="index8">
+            <element name="sku"/>
+        </index>
+        <index name="index9">
+            <element name="store"/>
+        </index>
+    </element>
+</database>

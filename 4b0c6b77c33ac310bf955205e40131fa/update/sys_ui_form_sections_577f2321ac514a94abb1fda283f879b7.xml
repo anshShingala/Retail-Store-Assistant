@@ -1,49 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-  <sys_ui_form_sections form_id="577f2321ac514a94abb1fda283f879b7" sys_domain="global" table="x_1945330_retail_0_bus_policy">
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>0</position>
-      <sys_id>36d210c7680245d8a15b997396eb70d3</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>1</position>
-      <sys_id>8e45d28c371d43cd9539dc6ddb0604d0</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>2</position>
-      <sys_id>1213b9876d1b41d5a06f578d57e09ccd</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>3</position>
-      <sys_id>116fa9faf2f340dcb576099c7eb54498</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Authorization" display_value="Authorization" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">cd60ce77e88e48c08aba14d8683ff66e</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>4</position>
-      <sys_id>e190ee91c04c43fcac23134f69d57412</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">27b57fc8219141e9a7e326a0a0c737f3</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form_section action="INSERT_OR_UPDATE">
-      <position>5</position>
-      <sys_id>77530916860b4b40b501faa74dce0540</sys_id>
-      <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
-      <sys_ui_section caption="Change Information" display_value="Change Information" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">2ba831fda57d4f4cb592d65534021d04</sys_ui_section>
-    </sys_ui_form_section>
-    <sys_ui_form action="INSERT_OR_UPDATE">
-      <name>x_1945330_retail_0_bus_policy</name>
-      <roles/>
-      <sys_id>577f2321ac514a94abb1fda283f879b7</sys_id>
-      <sys_scope display_value="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
-      <sys_user/>
-      <view display_value="Default view" name="NULL">Default view</view>
-      <view_name/>
-    </sys_ui_form>
-  </sys_ui_form_sections>
+    <sys_ui_form_sections form_id="577f2321ac514a94abb1fda283f879b7" sys_domain="global" table="x_1945330_retail_0_bus_policy" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>36d210c7680245d8a15b997396eb70d3</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Policy Identity" display_value="Policy Identity" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">70d60ef2a2804d609f4aaff1391f0f34</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8e45d28c371d43cd9539dc6ddb0604d0</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Effective Dating" display_value="Effective Dating" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">3c8cce8461f241a996e903bc43649374</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1213b9876d1b41d5a06f578d57e09ccd</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Activation" display_value="Activation" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">7f9489cc1c4f4a0da45f377ebe25ab0c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>116fa9faf2f340dcb576099c7eb54498</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Authorization" display_value="Authorization" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">cd60ce77e88e48c08aba14d8683ff66e</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>e190ee91c04c43fcac23134f69d57412</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Configuration" display_value="Configuration" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">27b57fc8219141e9a7e326a0a0c737f3</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>77530916860b4b40b501faa74dce0540</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_1945330_retail_0_bus_policy" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">577f2321ac514a94abb1fda283f879b7</sys_ui_form>
+            <sys_ui_section caption="Change Information" display_value="Change Information" name="x_1945330_retail_0_bus_policy" sys_domain="global" view="Default view">2ba831fda57d4f4cb592d65534021d04</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_1945330_retail_0_bus_policy</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2026-08-27 03:48:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>577f2321ac514a94abb1fda283f879b7</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_1945330_retail_0_bus_policy</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="Retail Store Assistant" source="x_1945330_retail_0">4b0c6b77c33ac310bf955205e40131fa</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="Retail Store Assistant">4b0c6b77c33ac310bf955205e40131fa</sys_scope>
+            <sys_update_name>sys_ui_form_sections_577f2321ac514a94abb1fda283f879b7</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2026-08-27 03:48:41</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
 </record_update>
